@@ -189,30 +189,7 @@ function injectNavbar() {
       ${navLinks.map(link =>
         `<a href="${link.href}" class="navbar__mobile-link">${link.label}</a>`
       ).join('')}
-      <div class="navbar__mobile-actions">
-        <a href="login.html" class="btn btn--outline" style="width:100%">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Login
-        </a>
-        <a href="dashboard.html" class="btn btn--outline" style="width:100%">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg>User Dashboard
-        </a>
-        <a href="admin.html" class="btn btn--outline" style="width:100%">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>Admin Dashboard
-        </a>
-      </div>
-      <!-- Mobile Theme/RTL Controls -->
-      <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 0 0;border-top:1px solid var(--border);margin-top:auto">
-        <button
-          class="rtl-toggle-btn"
-          onclick="toggleDir();document.getElementById('mobileClose').click()"
-          style="flex:1;justify-content:center"
-        >Toggle RTL</button>
-        <button
-          onclick="toggleTheme();document.getElementById('mobileClose').click()"
-          class="btn btn--outline btn--sm"
-          style="flex:1"
-        >Toggle Theme</button>
-      </div>
+      <div class="navbar__mobile-actions"></div>
     </div>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
