@@ -48,17 +48,14 @@
       <a href="#" class="dash-nav-item" data-section="users">
         <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <span class="dash-nav-label-text">Users</span>
-        <span class="notif-badge dash-nav-badge">847</span>
       </a>
       <a href="#" class="dash-nav-item" data-section="orders">
         <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
         <span class="dash-nav-label-text">Orders</span>
-        <span class="notif-badge dash-nav-badge">12</span>
       </a>
       <a href="#" class="dash-nav-item" data-section="products">
         <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
         <span class="dash-nav-label-text">Products</span>
-        <span class="notif-badge dash-nav-badge">8</span>
       </a>
 
       <div class="dash-nav-label">Content</div>
@@ -557,6 +554,10 @@
 </div>
 
 <script src="js/main.js"></script>
+<style>
+  @keyframes toastIn { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes toastOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(100%); } }
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const remove = s => document.querySelector(s)?.remove();
@@ -669,6 +670,54 @@
       item.addEventListener('click', e => {
         e.preventDefault();
         setSection(item.dataset.section);
+      });
+    });
+
+    // ─── Toast & Button System ───
+    function showToast(msg) {
+      const container = document.getElementById('toastContainer') || (() => {
+        const c = document.createElement('div');
+        c.id = 'toastContainer';
+        c.style.cssText = 'position:fixed;bottom:2rem;right:2rem;z-index:10000;display:flex;flex-direction:column;gap:0.5rem;pointer-events:none';
+        document.body.appendChild(c);
+        return c;
+      })();
+      const t = document.createElement('div');
+      t.style.cssText = 'background:var(--graphite);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0.875rem 1.5rem;color:var(--text-primary);font-size:var(--text-sm);box-shadow:0 8px 32px rgba(0,0,0,0.4);animation:toastIn 0.3s ease,toastOut 0.3s ease 2.5s forwards;pointer-events:auto;max-width:360px';
+      t.textContent = msg;
+      container.appendChild(t);
+      setTimeout(() => t.remove(), 3000);
+    }
+
+    function toastMsg(txt) {
+      const s = txt.trim();
+      if (s.includes('Edit') && !s.includes('Enable')) return 'Opening edit form...';
+      if (s.includes('Delete')) return 'Delete confirmation required';
+      if (s.startsWith('+ Add') || s.startsWith('+ New')) return 'New item creation form opened';
+      if (s.includes('View')) return 'Loading...';
+      if (s.includes('Hide')) return 'Item hidden from public view';
+      if (s.includes('Save')) return 'Settings saved successfully!';
+      if (s.includes('Change Password')) return 'Password reset email sent!';
+      if (s.includes('2FA') || s.includes('Two-Factor')) return '2FA setup coming soon!';
+      if (s.includes('Sign Out')) return 'Signing out...';
+      if (s.includes('Previous') || s.includes('Next') || /^\d+$/.test(s)) return 'Loading page...';
+      if (s.includes('Invoice')) return 'Invoice downloaded';
+      if (s.includes('Track')) return 'Loading tracking information...';
+      if (s.includes('Submit') || s.includes('Approve')) return 'Submitted for processing!';
+      if (s.includes('Upload')) return 'Upload interface opened';
+      if (s.includes('Download')) return 'Download started...';
+      if (s.includes('Reorder')) return 'Item added to your cart!';
+      if (s.includes('Order')) return 'New order form opened';
+      if (s.includes('Enable')) return 'Feature coming soon!';
+      return `"${s}" clicked`;
+    }
+
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.classList.contains('back-to-top')) return;
+      btn.addEventListener('click', () => {
+        const txt = btn.textContent.replace(/[→←]/g, '').trim();
+        if (txt === '↑' || txt === '1' || txt === '✓') return;
+        showToast(toastMsg(txt));
       });
     });
   });

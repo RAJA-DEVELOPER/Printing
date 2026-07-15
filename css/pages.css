@@ -1903,6 +1903,14 @@
 }
 
 /* ══════════════════════════════════════════
+   AWARDS CARDS — ICON CENTERING
+   ══════════════════════════════════════════ */
+.card[style*="text-align:center"] > div[style*="font-size:3rem"] {
+  display: flex;
+  justify-content: center;
+}
+
+/* ══════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════ */
 

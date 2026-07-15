@@ -76,9 +76,9 @@
 }
 
 [data-theme="light"] .navbar__logo-text { color: #0A0A0A; }
-[data-theme="light"] .navbar__link { color: #3A3A3C; }
+[data-theme="light"] .navbar__link { color: #0A0A0A; font-weight: var(--weight-semibold); }
 [data-theme="light"] .navbar__link:hover,
-[data-theme="light"] .navbar__link.active { color: #0A0A0A; }
+[data-theme="light"] .navbar__link.active { color: var(--copper); }
 [data-theme="light"] .navbar__dropdown-menu {
   background: rgba(255, 255, 255, 0.97);
 }

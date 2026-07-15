@@ -301,6 +301,38 @@
   }
 }
 
+@media (max-width: 479px) {
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .process-step__number {
+    position: static;
+    margin: 0 auto 1rem;
+  }
+}
+
+/* ════════════════════════════════════════
+   WHY PRINTCRAFT GRID — RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .section[aria-labelledby="whyHeading"] > .container > div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .section[aria-labelledby="whyHeading"] > .container > div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .section[aria-labelledby="whyHeading"] .card {
+    padding: var(--space-6) var(--space-4) !important;
+  }
+}
+
 /* ════════════════════════════════════════
    TESTIMONIALS — RESPONSIVE
    ════════════════════════════════════════ */
@@ -419,6 +451,10 @@
     overflow: hidden;
     white-space: normal;
     word-break: break-all;
+  }
+
+  .page-hero .section-label {
+    text-shadow: 0 0 12px rgba(0,0,0,0.6);
   }
 }
 
