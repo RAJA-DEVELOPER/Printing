@@ -1,0 +1,310 @@
+/* ============================================
+   THEME.CSS — Light / Dark Theme System
+   ============================================ */
+
+/* ── Smooth Theme Transitions ── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.2s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Exclude animation-heavy elements from transition */
+.hero__gradient-orb,
+.maint-orb,
+.auth-visual__orb,
+.loader-bar,
+.progress-fill,
+.hero__scroll-line {
+  transition: none !important;
+}
+
+/* ════════════════════════════════════════
+   LIGHT THEME TOKENS
+   ════════════════════════════════════════ */
+[data-theme="light"] {
+  --obsidian: #FAFAFA;
+  --graphite: #F0F0F2;
+  --graphite-mid: #E4E4E8;
+  --graphite-light: #D8D8DC;
+  --platinum: #0A0A0A;
+  --platinum-dim: #2C2C2E;
+
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F0F0F2;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(0, 0, 0, 0.04);
+  --text-primary: #0A0A0A;
+  --text-secondary: #3A3A3C;
+  --text-muted: rgba(0, 0, 0, 0.45);
+
+  --border: rgba(0, 0, 0, 0.1);
+  --border-accent: rgba(184, 115, 51, 0.35);
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+  --shadow-xl: 0 32px 80px rgba(0,0,0,0.15);
+  --shadow-copper: 0 8px 32px rgba(184,115,51,0.2);
+  --shadow-glow: 0 0 60px rgba(184,115,51,0.1);
+
+  --grad-dark: linear-gradient(180deg, #FAFAFA 0%, #F0F0F2 100%);
+  --grad-hero: linear-gradient(135deg, #F0EBE3 0%, #FAF5EE 60%, #FFF5E8 100%);
+  --grad-glass: linear-gradient(135deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.01) 100%);
+  --grad-mesh:
+    radial-gradient(ellipse at 20% 50%, rgba(184,115,51,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(198,255,0,0.05) 0%, transparent 60%);
+
+  /* Hero overlay — light (semi-transparent white so background image shows through) */
+  --hero-overlay-start: rgba(255, 255, 255, 0.45);
+  --hero-overlay-end:   rgba(255, 255, 255, 0.80);
+}
+
+/* ── Light Theme: Navbar ── */
+[data-theme="light"] .navbar {
+  background: transparent;
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(250, 250, 250, 0.9);
+  border-bottom-color: rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .navbar__logo-text { color: #0A0A0A; }
+[data-theme="light"] .navbar__link { color: #3A3A3C; }
+[data-theme="light"] .navbar__link:hover,
+[data-theme="light"] .navbar__link.active { color: #0A0A0A; }
+[data-theme="light"] .navbar__dropdown-menu {
+  background: rgba(255, 255, 255, 0.97);
+}
+[data-theme="light"] .hamburger-line { background: #0A0A0A; }
+[data-theme="light"] .navbar__mobile {
+  background: #FAFAFA;
+}
+[data-theme="light"] .navbar__mobile-link { color: #0A0A0A; }
+
+/* ── Light Theme: Hero ── */
+[data-theme="light"] .hero {
+  background: var(--grad-hero);
+}
+
+[data-theme="light"] .hero__grid-lines {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
+[data-theme="light"] .hero__title { color: #0A0A0A; }
+[data-theme="light"] .hero__desc { color: #3A3A3C; }
+
+[data-theme="light"] .hero__slide-overlay {
+  background: linear-gradient(135deg, rgba(250,245,238,0.88) 0%, rgba(250,245,238,0.7) 50%, rgba(255,240,220,0.6) 100%);
+}
+
+[data-theme="light"] .hero__gradient-orb--1 {
+  background: rgba(184,115,51,0.12);
+}
+
+[data-theme="light"] .hero__gradient-orb--2 {
+  background: rgba(198,255,0,0.08);
+}
+
+/* ── Light Theme: Page Hero ── */
+[data-theme="light"] .page-hero {
+  background: linear-gradient(135deg, #F0EBE3, #FAF5EE);
+}
+
+[data-theme="light"] .page-hero__bg-text {
+  color: rgba(0, 0, 0, 0.035);
+}
+
+[data-theme="light"] .page-hero__title {
+  color: #0A0A0A;
+}
+
+[data-theme="light"] .page-hero__subtitle {
+  color: #3A3A3C;
+}
+
+/* ── Light Theme: Cards ── */
+[data-theme="light"] .card,
+[data-theme="light"] .service-card,
+[data-theme="light"] .testimonial-card {
+  background: rgba(255,255,255,0.95);
+}
+
+[data-theme="light"] .card:hover,
+[data-theme="light"] .service-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Light Theme: Split Hero ── */
+[data-theme="light"] .split-hero__left {
+  background: #F0EBE3;
+}
+
+/* ── Light Theme: Stats ── */
+[data-theme="light"] .stats-section {
+  background: #F0F0F2;
+}
+
+/* ── Light Theme: Process ── */
+[data-theme="light"] .process {
+  background: #F0F0F2;
+}
+
+/* ── Light Theme: Footer ── */
+[data-theme="light"] .footer {
+  background: #E8E8EC;
+}
+
+/* ── Light Theme: Forms ── */
+[data-theme="light"] .form-control {
+  background: rgba(255,255,255,0.8);
+  color: #0A0A0A;
+}
+
+[data-theme="light"] .form-control:focus {
+  background: rgba(255,255,255,0.95);
+}
+
+/* ── Light Theme: Auth Pages ── */
+[data-theme="light"] .auth-visual__bg {
+  background: linear-gradient(135deg, #F0EBE3, #FAF5EE 60%, #FFF0DC);
+}
+
+[data-theme="light"] .auth-form-side {
+  background: #FAFAFA;
+}
+
+/* ── Light Theme: Dashboard ── */
+[data-theme="light"] .dash-sidebar {
+  background: #F0F0F2;
+  border-right-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .dash-topbar {
+  background: rgba(250,250,250,0.9);
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .dash-nav-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .orders-table th {
+  background: rgba(0,0,0,0.04);
+}
+
+/* ── Light Theme: Marquee ── */
+[data-theme="light"] .marquee-wrap {
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* ── Light Theme: Page Loader ── */
+[data-theme="light"] .page-loader {
+  background: #FAFAFA;
+}
+
+/* ── Light Theme: Back-to-Top ── */
+[data-theme="light"] .back-to-top {
+  box-shadow: 0 8px 24px rgba(184,115,51,0.3);
+}
+
+/* ── Light Theme: Accordion ── */
+[data-theme="light"] .accordion-trigger {
+  color: #0A0A0A;
+}
+
+/* ── Light Theme: Maintenance ── */
+[data-theme="light"] .maint-page,
+[data-theme="light"] .error-page {
+  background: #FAFAFA;
+}
+
+/* ── Light Theme: Section label ── */
+[data-theme="light"] .section-label::before {
+  background: var(--copper);
+}
+
+/* ════════════════════════════════════════
+   THEME TOGGLE BUTTON
+   ════════════════════════════════════════ */
+.theme-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  touch-action: manipulation;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(184,115,51,0.1);
+  border-color: var(--border-accent);
+  color: var(--copper);
+}
+
+.theme-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* RTL Toggle Button */
+.rtl-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.625rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.rtl-toggle-btn:hover,
+.rtl-toggle-btn.active {
+  background: rgba(184,115,51,0.12);
+  border-color: var(--copper);
+  color: var(--copper);
+}
+
+/* ── Topbar Controls Panel ── */
+.ctrl-panel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ctrl-panel-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.ctrl-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+}

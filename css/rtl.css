@@ -1,0 +1,575 @@
+/* ============================================
+   RTL.CSS — Right-to-Left Layout Overrides
+   ============================================ */
+
+/* ════════════════════════════════════════
+   BASE RTL RULES
+   ════════════════════════════════════════ */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-feature-settings: "kern" 1;
+}
+
+/* ════════════════════════════════════════
+   NAVBAR RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .navbar__inner {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .hamburger {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .navbar__mobile-close {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* ════════════════════════════════════════
+   HERO RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .hero__content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero__eyebrow {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .hero__actions {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .hero__scroll {
+  right: auto;
+  left: 3rem;
+}
+
+[dir="rtl"] .hero__scroll-line {
+  animation: scrollLineRTL 2.5s ease infinite;
+}
+
+@keyframes scrollLineRTL {
+  0%   { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  50%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: top;    opacity: 0; }
+}
+
+[dir="rtl"] .hero__slide-indicators {
+  right: auto;
+  left: 3rem;
+}
+
+[dir="rtl"] .hero__controls {
+  right: auto;
+  left: 3rem;
+}
+
+/* ════════════════════════════════════════
+   SECTION LABELS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .section-label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-label::before {
+  margin-right: 0;
+  margin-left: var(--space-3);
+}
+
+/* ════════════════════════════════════════
+   MARQUEE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .marquee-track {
+  animation: marqueeRTL 25s linear infinite;
+}
+
+@keyframes marqueeRTL {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+[dir="rtl"] .marquee-item {
+  flex-direction: row-reverse;
+}
+
+/* ════════════════════════════════════════
+   SERVICE CARDS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .service-card__head {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .service-card__arrow {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .service-card:hover .service-card__arrow {
+  transform: rotate(180deg) translateX(-6px);
+}
+
+/* ════════════════════════════════════════
+   EDITORIAL GRID RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .editorial-featured {
+  direction: rtl;
+}
+
+/* ════════════════════════════════════════
+   STATS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .stat-item {
+  text-align: center; /* stats stay centered */
+}
+
+/* ════════════════════════════════════════
+   PROCESS TIMELINE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .process-step__head {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .process-step__line {
+  right: auto;
+  left: 0;
+}
+
+/* ════════════════════════════════════════
+   TESTIMONIALS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .testimonial-stars {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .testimonial-author {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .testimonial-text {
+  text-align: right;
+}
+
+/* ════════════════════════════════════════
+   FOOTER RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .footer__top {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer__brand {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__logo {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .footer__social {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .footer__links {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__bottom {
+  flex-direction: row-reverse;
+}
+
+/* ════════════════════════════════════════
+   BUTTONS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .btn .btn-icon--right {
+  margin-left: 0;
+  margin-right: var(--space-2);
+  order: -1;
+  transform: scaleX(-1);
+}
+
+/* ════════════════════════════════════════
+   SPLIT HERO RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .split-hero {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .split-hero__left {
+  text-align: right;
+}
+
+[dir="rtl"] .split-hero__floating-card--1 {
+  left: auto;
+  right: 2rem;
+}
+
+[dir="rtl"] .split-hero__floating-card--2 {
+  right: auto;
+  left: 2rem;
+}
+
+/* ════════════════════════════════════════
+   ABOUT PAGE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .values-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .value-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .value-item__num {
+  margin-right: 0;
+  margin-left: var(--space-6);
+}
+
+/* Timeline RTL */
+[dir="rtl"] .timeline {
+  direction: rtl;
+}
+
+[dir="rtl"] .timeline::before {
+  right: 50%;
+  left: auto;
+  transform: translateX(50%);
+}
+
+[dir="rtl"] .timeline-item:nth-child(odd) .timeline-card {
+  grid-column: 3;
+}
+
+[dir="rtl"] .timeline-item:nth-child(even) .timeline-card {
+  grid-column: 1;
+}
+
+[dir="rtl"] .timeline-card::after {
+  left: -1px;
+  right: auto;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+[dir="rtl"] .timeline-item:nth-child(even) .timeline-card::after {
+  right: -1px;
+  left: auto;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ════════════════════════════════════════
+   SERVICES PAGE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .service-detail {
+  direction: rtl;
+}
+
+[dir="rtl"] .service-features {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[dir="rtl"] .service-feature {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .service-feature::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .service-detail__badge {
+  top: 1.5rem;
+  left: 1.5rem;
+  right: auto;
+}
+
+/* ════════════════════════════════════════
+   CONTACT PAGE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .contact-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .contact-detail {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .contact-detail__icon {
+  margin-right: 0;
+  margin-left: var(--space-4);
+}
+
+[dir="rtl"] .contact-form-fields {
+  direction: rtl;
+}
+
+[dir="rtl"] .form-error {
+  text-align: right;
+}
+
+/* Map placeholder */
+[dir="rtl"] .map-placeholder {
+  text-align: center; /* stays centred */
+}
+
+/* ════════════════════════════════════════
+   ACCORDION RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .accordion-trigger {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .accordion-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ════════════════════════════════════════
+   GALLERY RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .gallery-filter {
+  flex-direction: row-reverse;
+}
+
+/* ════════════════════════════════════════
+   DASHBOARD RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .dashboard-layout {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+[dir="rtl"] .dash-sidebar__nav {
+  text-align: right;
+}
+
+[dir="rtl"] .dash-nav-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .dash-nav-item .dash-nav-icon {
+  margin-right: 0;
+  margin-left: var(--space-3);
+}
+
+[dir="rtl"] .dash-nav-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .dash-topbar {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dash-user {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dash-user .dash-avatar {
+  margin-right: 0;
+  margin-left: var(--space-3);
+}
+
+[dir="rtl"] .orders-table {
+  direction: rtl;
+}
+
+[dir="rtl"] .timeline-step {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .timeline-step__dot {
+  margin-right: 0;
+  margin-left: var(--space-4);
+}
+
+[dir="rtl"] .timeline-step__date {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .designs-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .design-card__actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .profile-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .upload-zone {
+  direction: rtl;
+}
+
+/* ════════════════════════════════════════
+   AUTH PAGES RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .auth-page {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .auth-visual__content {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-logo {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .auth-form {
+  direction: rtl;
+}
+
+[dir="rtl"] .auth-link {
+  direction: rtl;
+}
+
+/* ════════════════════════════════════════
+   WHY GRID RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .why-card {
+  text-align: right;
+}
+
+/* ════════════════════════════════════════
+   TEAM CARDS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .team-card__info {
+  text-align: right;
+}
+
+/* ════════════════════════════════════════
+   ORDER TIMELINE RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .order-timeline {
+  direction: rtl;
+}
+
+[dir="rtl"] .order-timeline::before {
+  right: 18px;
+  left: auto;
+}
+
+/* ════════════════════════════════════════
+   ESTIMATOR RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .estimator__grid {
+  direction: rtl;
+}
+
+/* ════════════════════════════════════════
+   BACK TO TOP RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 2rem;
+}
+
+/* ════════════════════════════════════════
+   FORM LABEL (inline elements) RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] label {
+  display: block;
+  text-align: right;
+}
+
+[dir="rtl"] .form-label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* ════════════════════════════════════════
+   CTA SECTION RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .cta-buttons {
+  flex-direction: row-reverse;
+}
+
+/* ════════════════════════════════════════
+   PROGRESS RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .progress-fill {
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* ════════════════════════════════════════
+   MASONRY OVERLAY RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .masonry-overlay {
+  direction: rtl;
+}
+
+/* ════════════════════════════════════════
+   LIGHTBOX RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .lightbox__close {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .lightbox__prev,
+[dir="rtl"] .lightbox__next {
+  transform: scaleX(-1);
+}
+
+/* ════════════════════════════════════════
+   RTL FONT ENHANCEMENTS
+   ════════════════════════════════════════ */
+[dir="rtl"] :lang(ar) {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', system-ui, sans-serif;
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* ════════════════════════════════════════
+   QUOTE FORM RTL
+   ════════════════════════════════════════ */
+[dir="rtl"] .quote-form {
+  direction: rtl;
+}
+
+[dir="rtl"] .quote-form__grid {
+  direction: rtl;
+}

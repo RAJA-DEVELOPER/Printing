@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Dashboard — PrintCraft Studio</title>
+  <meta name="description" content="Manage your PrintCraft orders, upload artwork, track jobs, and view invoices all from your secure client dashboard." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body style="overflow:auto">
+
+<div class="dashboard-layout">
+
+  <!-- ══════ SIDEBAR ══════ -->
+  <aside class="dash-sidebar" id="dashSidebar" role="navigation" aria-label="Dashboard navigation">
+    <div class="dash-sidebar__header">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">P</div>
+        <span class="navbar__logo-text">Print<span>Craft</span></span>
+      </a>
+    </div>
+
+    <nav class="dash-sidebar__nav">
+      <div class="dash-nav-label">Overview</div>
+      <a href="#" class="dash-nav-item active" data-section="overview">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg></span>
+        <span class="dash-nav-label-text">Dashboard</span>
+      </a>
+
+      <div class="dash-nav-label">My Work</div>
+      <a href="#" class="dash-nav-item" data-section="upload">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V3"/><path d="m5 10 7-7 7 7"/></svg></span>
+        <span class="dash-nav-label-text">Upload Artwork</span>
+        <span class="notif-badge dash-nav-badge">2</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="designs">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="6.5"/><path d="M13.5 13V3"/><path d="M3 13h10.5"/></svg></span>
+        <span class="dash-nav-label-text">Saved Designs</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="specs">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3Z"/><path d="M3 3l18 18"/><path d="M9 3v6"/></svg></span>
+        <span class="dash-nav-label-text">Print Specifications</span>
+      </a>
+
+      <div class="dash-nav-label">Orders</div>
+      <a href="#" class="dash-nav-item" data-section="orders">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+        <span class="dash-nav-label-text">My Orders</span>
+        <span class="notif-badge dash-nav-badge">3</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="timeline">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <span class="dash-nav-label-text">Order Timeline</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="status">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
+        <span class="dash-nav-label-text">Job Status</span>
+      </a>
+
+      <div class="dash-nav-label">Finance</div>
+      <a href="#" class="dash-nav-item" data-section="invoices">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2h16v20H4Z"/><path d="M8 7h8"/><path d="M8 12h8"/><path d="M8 17h5"/></svg></span>
+        <span class="dash-nav-label-text">Invoice History</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="reorder">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></span>
+        <span class="dash-nav-label-text">Reorder Previous</span>
+      </a>
+
+      <div class="dash-nav-label">Account</div>
+      <a href="#" class="dash-nav-item" data-section="profile">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></span>
+        <span class="dash-nav-label-text">Profile & Settings</span>
+      </a>
+
+      <div class="dash-nav-label" style="margin-top:var(--space-4)"></div>
+      <a href="index.html" class="dash-nav-item" style="color:var(--copper)">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
+        <span>Back to Website</span>
+      </a>
+    </nav>
+
+    <div class="dash-sidebar__footer">
+      <div class="dash-user">
+        <div class="dash-avatar">JD</div>
+        <div>
+          <div class="dash-user__name">Jane Doe</div>
+          <div class="dash-user__plan">Premium Client</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════ MAIN CONTENT ══════ -->
+  <main class="dash-main" id="dashMain">
+
+    <!-- Topbar -->
+    <div class="dash-topbar">
+      <div>
+        <h1 style="font-size:var(--text-lg);font-weight:700" id="dashPageTitle">Dashboard Overview</h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:var(--space-4)">
+        <div class="dash-search">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+          <input type="text" placeholder="Search orders, designs..." id="dashSearch" />
+        </div>
+        <button class="btn-icon" aria-label="Notifications"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+        <a href="contact.html" class="btn btn--primary btn--sm">+ New Order</a>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- ══════════════ OVERVIEW ══════════════ -->
+      <section class="dash-section active" id="section-overview">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Welcome back, Jane <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14v-3a2 2 0 0 1 4 0v1"/><path d="M9 15v-5a2 2 0 0 1 4 0v4"/><path d="M16 16v-2a2 2 0 0 1 4 0v4"/><path d="M16 16a5 5 0 0 1-10 0"/></svg></h2>
+
+        <div class="dash-overview-grid">
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <span class="dash-stat-change">+2</span>
+            </div>
+            <div class="dash-stat-value" data-count="12">0</div>
+            <div class="dash-stat-label">Active Orders</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="6.5"/><path d="M13.5 13V3"/><path d="M3 13h10.5"/></svg></div>
+              <span class="dash-stat-change">+5</span>
+            </div>
+            <div class="dash-stat-value" data-count="38">0</div>
+            <div class="dash-stat-label">Saved Designs</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 7h20"/><rect x="2" y="7" width="20" height="10" rx="2"/></svg></div>
+              <span class="dash-stat-change down">-3%</span>
+            </div>
+            <div class="dash-stat-value" data-prefix="$" data-count="4280">0</div>
+            <div class="dash-stat-label">Total Spent</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <span class="dash-stat-change">Top</span>
+            </div>
+            <div class="dash-stat-value" data-count="5" data-suffix="★">0★</div>
+            <div class="dash-stat-label">Your Rating</div>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;margin-top:var(--space-6)">
+          <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <h3 style="font-size:var(--text-md);font-weight:700">Recent Orders</h3>
+            <button class="dash-nav-item" data-section="orders" style="font-size:var(--text-xs);color:var(--copper)">View All →</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th>Order ID</th><th>Product</th><th>Date</th><th>Qty</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="color:var(--copper);font-weight:600">#PC-8821</td>
+                  <td>Gold Foil Visiting Cards</td>
+                  <td>Jul 14, 2026</td>
+                  <td>500</td>
+                  <td>$148</td>
+                  <td><span class="order-status order-status--processing">Processing</span></td>
+                  <td><button class="btn btn--ghost btn--sm" onclick="setSection('timeline')">Track</button></td>
+                </tr>
+                <tr>
+                  <td style="color:var(--copper);font-weight:600">#PC-8810</td>
+                  <td>A4 Brochures (Tri-fold)</td>
+                  <td>Jul 10, 2026</td>
+                  <td>200</td>
+                  <td>$95</td>
+                  <td><span class="order-status order-status--complete">Complete</span></td>
+                  <td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td>
+                </tr>
+                <tr>
+                  <td style="color:var(--copper);font-weight:600">#PC-8798</td>
+                  <td>Pull-Up Banner 85×200</td>
+                  <td>Jul 5, 2026</td>
+                  <td>2</td>
+                  <td>$320</td>
+                  <td><span class="order-status order-status--complete">Complete</span></td>
+                  <td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td>
+                </tr>
+                <tr>
+                  <td style="color:var(--copper);font-weight:600">#PC-8785</td>
+                  <td>Custom T-Shirts (DTG)</td>
+                  <td>Jun 28, 2026</td>
+                  <td>50</td>
+                  <td>$540</td>
+                  <td><span class="order-status order-status--complete">Complete</span></td>
+                  <td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-4);margin-top:var(--space-6)">
+          <button class="card dash-nav-item" data-section="upload" style="text-align:left;padding:var(--space-5);cursor:pointer;border:1px solid var(--border)">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V3"/><path d="m5 10 7-7 7 7"/></svg></div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Upload Artwork</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">Submit print-ready files</div>
+          </button>
+          <button class="card dash-nav-item" data-section="orders" style="text-align:left;padding:var(--space-5);cursor:pointer;border:1px solid var(--border)">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Track Orders</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">View live order status</div>
+          </button>
+          <a href="contact.html" class="card" style="text-align:left;padding:var(--space-5);cursor:pointer;border:1px solid var(--border)">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Get a Quote</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">Start a new project</div>
+          </a>
+          <button class="card dash-nav-item" data-section="invoices" style="text-align:left;padding:var(--space-5);cursor:pointer;border:1px solid var(--border)">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2h16v20H4Z"/><path d="M8 7h8"/><path d="M8 12h8"/><path d="M8 17h5"/></svg></div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Invoices</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">Download & manage</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- ══════════════ UPLOAD ARTWORK ══════════════ -->
+      <section class="dash-section" id="section-upload">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Upload Artwork</h2>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" multiple accept=".pdf,.ai,.eps,.psd,.tiff,.png,.jpg" aria-label="Upload artwork files" />
+          <div class="upload-zone__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2Z"/></svg></div>
+          <h3 class="upload-zone__title">Drag & Drop Your Files Here</h3>
+          <p class="upload-zone__sub">PDF, AI, EPS, PSD, TIFF, PNG — Max 500MB per file</p>
+          <span class="btn btn--outline btn--sm" style="margin-top:var(--space-4);pointer-events:none">Browse Files</span>
+        </div>
+
+        <div id="uploadPreview"></div>
+
+        <div class="upload-specs">
+          <div class="upload-spec-item">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-3)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3Z"/><path d="M3 3l18 18"/><path d="M9 3v6"/></svg></div>
+            <h4 style="font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-2)">Resolution</h4>
+            <p style="font-size:var(--text-xs);color:var(--text-muted)">Minimum 300 DPI for print-ready quality</p>
+          </div>
+          <div class="upload-spec-item">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-3)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="6.5"/><path d="M13.5 13V3"/><path d="M3 13h10.5"/></svg></div>
+            <h4 style="font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-2)">Colour Mode</h4>
+            <p style="font-size:var(--text-xs);color:var(--text-muted)">CMYK required. RGB files will be converted.</p>
+          </div>
+          <div class="upload-spec-item">
+            <div style="font-size:1.5rem;margin-bottom:var(--space-3)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M8 20V12"/><path d="M12 20V8"/><path d="M16 20V4"/><path d="M20 20V12"/></svg></div>
+            <h4 style="font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-2)">Bleed</h4>
+            <p style="font-size:var(--text-xs);color:var(--text-muted)">3mm bleed on all sides required</p>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-6);text-align:right">
+          <button class="btn btn--primary">Submit Artwork for Review →</button>
+        </div>
+      </section>
+
+      <!-- ══════════════ SAVED DESIGNS ══════════════ -->
+      <section class="dash-section" id="section-designs">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">Saved Designs</h2>
+          <button class="btn btn--primary btn--sm">+ New Design</button>
+        </div>
+
+        <div class="designs-grid">
+          <div class="design-card">
+            <div class="design-card__preview"><div class="design-card__preview-inner" style="width:100%;height:100%;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div></div>
+            <div class="design-card__body">
+              <div class="design-card__name">Gold Foil Business Card</div>
+              <div class="design-card__meta">Updated Jul 12</div>
+            </div>
+            <div class="design-card__actions">
+              <button class="btn btn--ghost btn--sm">Edit</button>
+              <button class="btn btn--primary btn--sm">Order</button>
+            </div>
+          </div>
+          <div class="design-card">
+            <div class="design-card__preview"><div class="design-card__preview-inner" style="width:100%;height:100%;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div></div>
+            <div class="design-card__body">
+              <div class="design-card__name">Corporate Brochure A4</div>
+              <div class="design-card__meta">Updated Jul 8</div>
+            </div>
+            <div class="design-card__actions">
+              <button class="btn btn--ghost btn--sm">Edit</button>
+              <button class="btn btn--primary btn--sm">Order</button>
+            </div>
+          </div>
+          <div class="design-card">
+            <div class="design-card__preview"><div class="design-card__preview-inner" style="width:100%;height:100%;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div></div>
+            <div class="design-card__body">
+              <div class="design-card__name">Exhibition Banner Set</div>
+              <div class="design-card__meta">Updated Jun 30</div>
+            </div>
+            <div class="design-card__actions">
+              <button class="btn btn--ghost btn--sm">Edit</button>
+              <button class="btn btn--primary btn--sm">Order</button>
+            </div>
+          </div>
+          <div class="design-card">
+            <div class="design-card__preview"><div class="design-card__preview-inner" style="width:100%;height:100%;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div></div>
+            <div class="design-card__body">
+              <div class="design-card__name">Gift Box Packaging</div>
+              <div class="design-card__meta">Updated Jun 20</div>
+            </div>
+            <div class="design-card__actions">
+              <button class="btn btn--ghost btn--sm">Edit</button>
+              <button class="btn btn--primary btn--sm">Order</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ PRINT SPECIFICATIONS ══════════════ -->
+      <section class="dash-section" id="section-specs">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Print Specifications</h2>
+
+        <div style="display:grid;gap:var(--space-4)">
+          <div class="card">
+            <h3 style="font-weight:700;margin-bottom:var(--space-5)"><span style="width:24px;height:24px;border-radius:4px;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;display:inline-block;vertical-align:middle;margin-right:8px"></span> Visiting Cards</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-4)">
+              <div><div class="stat-label">Size (Standard)</div><div style="margin-top:0.25rem;font-weight:600">90mm × 50mm</div></div>
+              <div><div class="stat-label">Bleed</div><div style="margin-top:0.25rem;font-weight:600">3mm all sides</div></div>
+              <div><div class="stat-label">Resolution</div><div style="margin-top:0.25rem;font-weight:600">300 DPI</div></div>
+              <div><div class="stat-label">Color Mode</div><div style="margin-top:0.25rem;font-weight:600">CMYK</div></div>
+              <div><div class="stat-label">File Format</div><div style="margin-top:0.25rem;font-weight:600">PDF / AI / EPS</div></div>
+              <div><div class="stat-label">Safe Zone</div><div style="margin-top:0.25rem;font-weight:600">3mm from edge</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-weight:700;margin-bottom:var(--space-5)"><span style="width:24px;height:24px;border-radius:4px;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;display:inline-block;vertical-align:middle;margin-right:8px"></span> Pull-Up Banners</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-4)">
+              <div><div class="stat-label">Standard Size</div><div style="margin-top:0.25rem;font-weight:600">850mm × 2000mm</div></div>
+              <div><div class="stat-label">Wide Size</div><div style="margin-top:0.25rem;font-weight:600">1000mm × 2000mm</div></div>
+              <div><div class="stat-label">Resolution</div><div style="margin-top:0.25rem;font-weight:600">150 DPI (at size)</div></div>
+              <div><div class="stat-label">Color Mode</div><div style="margin-top:0.25rem;font-weight:600">CMYK</div></div>
+              <div><div class="stat-label">File Format</div><div style="margin-top:0.25rem;font-weight:600">PDF preferred</div></div>
+              <div><div class="stat-label">Bleed</div><div style="margin-top:0.25rem;font-weight:600">20mm all sides</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-weight:700;margin-bottom:var(--space-5)"><span style="width:24px;height:24px;border-radius:4px;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;display:inline-block;vertical-align:middle;margin-right:8px"></span> Flyers & Brochures</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-4)">
+              <div><div class="stat-label">A5 Size</div><div style="margin-top:0.25rem;font-weight:600">210mm × 148mm</div></div>
+              <div><div class="stat-label">A4 Size</div><div style="margin-top:0.25rem;font-weight:600">297mm × 210mm</div></div>
+              <div><div class="stat-label">Resolution</div><div style="margin-top:0.25rem;font-weight:600">300 DPI</div></div>
+              <div><div class="stat-label">Color Mode</div><div style="margin-top:0.25rem;font-weight:600">CMYK</div></div>
+              <div><div class="stat-label">Bleed</div><div style="margin-top:0.25rem;font-weight:600">3mm all sides</div></div>
+              <div><div class="stat-label">Fonts</div><div style="margin-top:0.25rem;font-weight:600">Outlined or embedded</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-6)">
+          <a href="#" class="btn btn--outline"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> Download Full Spec Sheet (PDF)</a>
+        </div>
+      </section>
+
+      <!-- ══════════════ MY ORDERS ══════════════ -->
+      <section class="dash-section" id="section-orders">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">My Orders</h2>
+          <div style="display:flex;gap:var(--space-3)">
+            <select class="form-control" style="width:auto" aria-label="Filter orders">
+              <option>All Orders</option>
+              <option>Processing</option>
+              <option>Complete</option>
+              <option>Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th>Order ID</th><th>Product</th><th>Date</th><th>Qty</th><th>Amount</th><th>Status</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8821</td><td>Gold Foil Visiting Cards</td><td>Jul 14, 2026</td><td>500</td><td>$148</td><td><span class="order-status order-status--processing">Processing</span></td><td><button class="btn btn--ghost btn--sm" onclick="setSection('timeline')">Track</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8820</td><td>Soft Touch Matte Cards</td><td>Jul 14, 2026</td><td>250</td><td>$68</td><td><span class="order-status order-status--pending">Pending Proof</span></td><td><button class="btn btn--ghost btn--sm">Approve Proof</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8815</td><td>DL Flyers (Gloss)</td><td>Jul 12, 2026</td><td>1000</td><td>$112</td><td><span class="order-status order-status--processing">Printing</span></td><td><button class="btn btn--ghost btn--sm" onclick="setSection('timeline')">Track</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8810</td><td>A4 Tri-fold Brochures</td><td>Jul 10, 2026</td><td>200</td><td>$95</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8798</td><td>Pull-Up Banner 85×200</td><td>Jul 5, 2026</td><td>2</td><td>$320</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8785</td><td>Custom T-Shirts (DTG)</td><td>Jun 28, 2026</td><td>50</td><td>$540</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8760</td><td>Branded Mugs (12pk)</td><td>Jun 18, 2026</td><td>12</td><td>$96</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm btn-reorder">Reorder</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ ORDER TIMELINE ══════════════ -->
+      <section class="dash-section" id="section-timeline">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Order Timeline</h2>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-6)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+            <div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Order</div>
+              <div style="font-size:var(--text-lg);font-weight:700;color:var(--copper)">#PC-8821 — Gold Foil Visiting Cards</div>
+            </div>
+            <span class="order-status order-status--processing">Processing</span>
+          </div>
+        </div>
+
+        <div class="order-timeline">
+          <div class="timeline-step done">
+            <div class="timeline-step__dot">✓</div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Order Placed & Confirmed</div>
+              <div class="timeline-step__desc">Your order was received and payment confirmed.</div>
+            </div>
+            <div class="timeline-step__date">Jul 14, 9:12 AM</div>
+          </div>
+          <div class="timeline-step done">
+            <div class="timeline-step__dot">✓</div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Artwork Received & Checked</div>
+              <div class="timeline-step__desc">Your files passed preflight check. No issues found.</div>
+            </div>
+            <div class="timeline-step__date">Jul 14, 11:30 AM</div>
+          </div>
+          <div class="timeline-step done">
+            <div class="timeline-step__dot">✓</div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Digital Proof Sent</div>
+              <div class="timeline-step__desc">Proof approved by client. Proceeding to print.</div>
+            </div>
+            <div class="timeline-step__date">Jul 14, 2:00 PM</div>
+          </div>
+          <div class="timeline-step current">
+            <div class="timeline-step__dot"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg></div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Printing in Progress</div>
+              <div class="timeline-step__desc">Your order is currently on press. ETA: Jul 15 EOD.</div>
+            </div>
+            <div class="timeline-step__date">In Progress</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step__dot"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Finishing & Quality Check</div>
+              <div class="timeline-step__desc">Foil stamping and quality inspection pending.</div>
+            </div>
+            <div class="timeline-step__date">Jul 15</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step__dot"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Packed & Dispatched</div>
+              <div class="timeline-step__desc">Your order will be packaged and handed to courier.</div>
+            </div>
+            <div class="timeline-step__date">Jul 16</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step__dot"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></div>
+            <div style="flex:1">
+              <div class="timeline-step__title">Out for Delivery</div>
+              <div class="timeline-step__desc">Estimated delivery: Jul 17</div>
+            </div>
+            <div class="timeline-step__date">Jul 17</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ JOB STATUS ══════════════ -->
+      <section class="dash-section" id="section-status">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Job Status</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4)">
+          <div>
+            <div style="font-size:var(--text-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);padding-bottom:var(--space-2);border-bottom:1px solid var(--border)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".4"/></svg> Pending (2)</div>
+            <div class="card" style="margin-bottom:var(--space-3)">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8820 — Matte Cards</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Awaiting proof approval</div>
+              <button class="btn btn--primary btn--sm" style="margin-top:var(--space-3)">Approve Proof</button>
+            </div>
+            <div class="card">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8822 — Packaging</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Awaiting artwork upload</div>
+              <button class="btn btn--outline btn--sm" style="margin-top:var(--space-3)" onclick="setSection('upload')">Upload Files</button>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:var(--text-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);padding-bottom:var(--space-2);border-bottom:1px solid var(--border)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".4"/></svg> In Production (2)</div>
+            <div class="card" style="margin-bottom:var(--space-3)">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8821 — Gold Foil Cards</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">On press — Est. Jul 15</div>
+              <div class="progress-bar" style="margin-top:var(--space-3)"><div class="progress-fill" data-width="65" style="width:65%"></div></div>
+            </div>
+            <div class="card">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8815 — DL Flyers</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">Printing — Est. Jul 14</div>
+              <div class="progress-bar" style="margin-top:var(--space-3)"><div class="progress-fill" data-width="80" style="width:80%"></div></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:var(--text-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);padding-bottom:var(--space-2);border-bottom:1px solid var(--border)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Completed (3)</div>
+            <div class="card" style="margin-bottom:var(--space-3);border-color:rgba(198,255,0,0.15)">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8810 — Brochures</div>
+              <div style="font-size:var(--text-xs);color:var(--neon)">Delivered Jul 11</div>
+            </div>
+            <div class="card" style="margin-bottom:var(--space-3);border-color:rgba(198,255,0,0.15)">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8798 — Banners</div>
+              <div style="font-size:var(--text-xs);color:var(--neon)">Delivered Jul 7</div>
+            </div>
+            <div class="card" style="border-color:rgba(198,255,0,0.15)">
+              <div style="font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1)">#PC-8785 — T-Shirts</div>
+              <div style="font-size:var(--text-xs);color:var(--neon)">Delivered Jun 30</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ INVOICES ══════════════ -->
+      <section class="dash-section" id="section-invoices">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Invoice History</h2>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="overflow-x:auto">
+            <table class="invoice-table">
+              <thead>
+                <tr><th>Invoice #</th><th>Date</th><th>Order(s)</th><th>Amount</th><th>Status</th><th>Download</th></tr>
+              </thead>
+              <tbody>
+                <tr><td style="font-weight:600">INV-2026-0085</td><td>Jul 14, 2026</td><td>#PC-8821, #PC-8820</td><td>$216</td><td><span class="badge">Paid</span></td><td><button class="btn btn--ghost btn--sm"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> PDF</button></td></tr>
+                <tr><td style="font-weight:600">INV-2026-0079</td><td>Jul 10, 2026</td><td>#PC-8810, #PC-8815</td><td>$207</td><td><span class="badge">Paid</span></td><td><button class="btn btn--ghost btn--sm"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> PDF</button></td></tr>
+                <tr><td style="font-weight:600">INV-2026-0071</td><td>Jul 5, 2026</td><td>#PC-8798</td><td>$320</td><td><span class="badge">Paid</span></td><td><button class="btn btn--ghost btn--sm"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> PDF</button></td></tr>
+                <tr><td style="font-weight:600">INV-2026-0063</td><td>Jun 28, 2026</td><td>#PC-8785</td><td>$540</td><td><span class="badge">Paid</span></td><td><button class="btn btn--ghost btn--sm"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> PDF</button></td></tr>
+                <tr><td style="font-weight:600">INV-2026-0051</td><td>Jun 18, 2026</td><td>#PC-8760</td><td>$96</td><td><span class="badge">Paid</span></td><td><button class="btn btn--ghost btn--sm"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg> PDF</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-6);padding:var(--space-5);background:rgba(184,115,51,0.08);border:1px solid var(--border-accent);border-radius:var(--radius-xl);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+          <div><div style="font-size:var(--text-sm);color:var(--text-muted)">Total Spent (2026)</div><div style="font-size:var(--text-2xl);font-weight:800;color:var(--copper)">$1,379</div></div>
+          <button class="btn btn--outline"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg> Download Statement</button>
+        </div>
+      </section>
+
+      <!-- ══════════════ REORDER ══════════════ -->
+      <section class="dash-section" id="section-reorder">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Reorder Previous Jobs</h2>
+
+        <div style="display:grid;gap:var(--space-4)">
+          <div class="card" style="display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap">
+            <div style="width:60px;height:60px;border-radius:var(--radius-lg);background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div>
+            <div style="flex:1;min-width:200px">
+              <div style="font-weight:700;margin-bottom:0.25rem">Gold Foil Visiting Cards</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">500 pcs • Gold Foil + Soft Touch • Last ordered Jul 14</div>
+            </div>
+            <div style="font-size:var(--text-lg);font-weight:700;color:var(--copper)">$148</div>
+            <button class="btn btn--primary btn-reorder">Reorder Same →</button>
+          </div>
+
+          <div class="card" style="display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap">
+            <div style="width:60px;height:60px;border-radius:var(--radius-lg);background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+            <div style="flex:1;min-width:200px">
+              <div style="font-weight:700;margin-bottom:0.25rem">A4 Tri-fold Brochures</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">200 pcs • Silk laminate • Last ordered Jul 10</div>
+            </div>
+            <div style="font-size:var(--text-lg);font-weight:700;color:var(--copper)">$95</div>
+            <button class="btn btn--primary btn-reorder">Reorder Same →</button>
+          </div>
+
+          <div class="card" style="display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap">
+            <div style="width:60px;height:60px;border-radius:var(--radius-lg);background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
+            <div style="flex:1;min-width:200px">
+              <div style="font-weight:700;margin-bottom:0.25rem">Custom T-Shirts (DTG)</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted)">50 pcs • 100% Cotton • Last ordered Jun 28</div>
+            </div>
+            <div style="font-size:var(--text-lg);font-weight:700;color:var(--copper)">$540</div>
+            <button class="btn btn--primary btn-reorder">Reorder Same →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ PROFILE & SETTINGS ══════════════ -->
+      <section class="dash-section" id="section-profile">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Profile & Settings</h2>
+
+        <div class="profile-grid">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar-img">JD</div>
+            <div style="font-weight:700;font-size:var(--text-lg);margin-bottom:0.25rem">Jane Doe</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-5)">Premium Client</div>
+            <button class="btn btn--outline btn--sm">Change Photo</button>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-5)">Account Information</h3>
+              <form style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input class="form-control" type="text" value="Jane" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input class="form-control" type="text" value="Doe" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input class="form-control" type="email" value="jane@company.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input class="form-control" type="tel" value="+971 50 000 0000" />
+                </div>
+                <div class="form-group" style="grid-column:span 2">
+                  <label class="form-label">Company</label>
+                  <input class="form-control" type="text" value="Luminary Consulting" />
+                </div>
+                <div style="grid-column:span 2">
+                  <button type="button" class="btn btn--primary" onclick="this.textContent='✓ Saved!';setTimeout(()=>this.textContent='Save Changes',2000)">Save Changes</button>
+                </div>
+              </form>
+            </div>
+
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-5)">Notification Preferences</h3>
+              <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+                <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Order status updates via email</span></label>
+                <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Proof ready notifications</span></label>
+                <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Promotional offers & new products</span></label>
+                <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Delivery & tracking updates via SMS</span></label>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-4)">Security</h3>
+              <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+                <button class="btn btn--outline" onclick="alert('Password reset email sent!')">Change Password</button>
+                <button class="btn btn--outline" onclick="alert('2FA setup coming soon!')">Enable 2FA</button>
+                <a href="login.html" class="btn btn--ghost" style="color:#FF453A;border-color:rgba(255,69,58,0.3)">Sign Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const remove = s => document.querySelector(s)?.remove();
+    remove('.navbar');
+    remove('.footer');
+    // Only inject minimal components (no full nav)
+    // Back to top still useful
+    const btt = document.createElement('button');
+    btt.className = 'back-to-top';
+    btt.id = 'backToTop';
+    btt.setAttribute('aria-label','Back to top');
+    btt.textContent = '↑';
+    document.body.appendChild(btt);
+
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400), {passive:true});
+    btt.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const duration = 1500;
+      const start = performance.now();
+      function update(time) {
+        const progress = Math.min((time - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = target * eased;
+        el.textContent = prefix + (Number.isInteger(target) ? Math.floor(current).toLocaleString() : current.toFixed(1)) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    document.querySelectorAll('[data-count]').forEach(el => animateCounter(el));
+
+    // Dashboard navigation
+    const navItems = document.querySelectorAll('.dash-nav-item[data-section]');
+    const sections = document.querySelectorAll('.dash-section');
+    const titles = {
+      overview: 'Dashboard Overview', upload: 'Upload Artwork',
+      designs: 'Saved Designs', specs: 'Print Specifications',
+      orders: 'My Orders', timeline: 'Order Timeline',
+      status: 'Job Status', invoices: 'Invoice History',
+      reorder: 'Reorder Previous Jobs', profile: 'Profile & Settings'
+    };
+
+    function setSection(name) {
+      navItems.forEach(n => n.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      const target = document.getElementById('section-' + name);
+      if (target) target.classList.add('active');
+      const navItem = document.querySelector(`.dash-nav-item[data-section="${name}"]`);
+      if (navItem) navItem.classList.add('active');
+      document.getElementById('dashPageTitle').textContent = titles[name] || 'Dashboard';
+    }
+
+    window.setSection = setSection;
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        setSection(item.dataset.section);
+      });
+    });
+
+    // Drag & Drop
+    const zone = document.getElementById('uploadZone');
+    const preview = document.getElementById('uploadPreview');
+    const fileInput = zone?.querySelector('input[type="file"]');
+
+    if (zone) {
+      ['dragenter','dragover'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.add('dragover'); }));
+      ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.remove('dragover'); }));
+      zone.addEventListener('drop', e => handleFiles(e.dataTransfer.files));
+      fileInput?.addEventListener('change', () => handleFiles(fileInput.files));
+    }
+
+    function handleFiles(files) {
+      if (!preview) return;
+      Array.from(files).forEach(file => {
+        const item = document.createElement('div');
+        item.style.cssText = 'display:flex;align-items:center;gap:1rem;padding:0.875rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-top:0.75rem';
+        const icon = file.type.startsWith('image/') ? '<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>' : file.type.includes('pdf') ? '<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2Z"/></svg>';
+        const size = file.size < 1048576 ? (file.size/1024).toFixed(1)+' KB' : (file.size/1048576).toFixed(1)+' MB';
+        item.innerHTML = `<span style="font-size:1.5rem">${icon}</span><div style="flex:1"><div style="font-weight:600;font-size:var(--text-sm)">${file.name}</div><div style="font-size:var(--text-xs);color:var(--text-muted)">${size}</div></div><div class="progress-bar" style="width:150px"><div class="progress-fill" style="width:0%"></div></div><span style="font-size:var(--text-xs);color:var(--copper);white-space:nowrap">Uploading...</span>`;
+        preview.appendChild(item);
+        const bar = item.querySelector('.progress-fill');
+        const status = item.querySelector('span:last-child');
+        let w = 0;
+        const iv = setInterval(() => {
+          w += Math.random()*20+5;
+          if (w >= 100) { w=100; clearInterval(iv); status.textContent='✓ Ready'; status.style.color='var(--neon)'; }
+          bar.style.width = w+'%';
+        }, 100);
+      });
+    }
+
+    // Reorder buttons
+    document.querySelectorAll('.btn-reorder').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const orig = btn.textContent;
+        btn.textContent = '✓ Added to Cart!';
+        btn.style.background = 'var(--neon)';
+        btn.style.color = 'var(--obsidian)';
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 2500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
+

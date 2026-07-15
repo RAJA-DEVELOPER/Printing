@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — PrintCraft Studio</title>
+  <meta name="description" content="Create your free PrintCraft client account to manage print orders, upload artwork, and access exclusive client pricing." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- Left: Visual -->
+  <div class="auth-visual">
+    <div class="auth-visual__bg" style="background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('assets/images/packaging.png'); background-size: cover; background-position: center;"></div>
+    <div class="auth-visual__orb auth-visual__orb--1" style="background:rgba(198,255,0,0.12)"></div>
+    <div class="auth-visual__orb auth-visual__orb--2" style="background:rgba(184,115,51,0.12)"></div>
+
+    <div class="auth-visual__content">
+      <a href="index.html" class="navbar__logo" style="margin-bottom:3rem">
+        <div class="navbar__logo-mark">P</div>
+        <span class="navbar__logo-text">Print<span>Craft</span></span>
+      </a>
+
+      <div class="auth-visual__quote">
+        "Join 2,500+ brands who<br>
+        <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">print with confidence</span>"
+      </div>
+
+      <p style="color:var(--text-secondary);font-size:var(--text-sm);max-width:380px;line-height:var(--leading-relaxed);margin-bottom:var(--space-10)">Your free account gives you full access to the PrintCraft client portal — orders, artwork, proofs, and invoices in one place.</p>
+
+      <!-- Plan comparison -->
+      <div style="background:var(--bg-glass);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+        <div style="font-size:var(--text-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--neon);margin-bottom:var(--space-4)">Free Account Includes</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)"><span style="color:var(--neon)">✓</span> Unlimited order management</div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)"><span style="color:var(--neon)">✓</span> Artwork upload & proof approvals</div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)"><span style="color:var(--neon)">✓</span> Invoice download & history</div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)"><span style="color:var(--neon)">✓</span> Instant price estimator</div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm)"><span style="color:var(--neon)">✓</span> Priority email support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Form -->
+  <div class="auth-form-side">
+    <div class="auth-form-wrap">
+      <div class="auth-logo">
+        <div class="auth-logo-mark">P</div>
+        <span class="navbar__logo-text">Print<span>Craft</span></span>
+      </div>
+
+      <h1 class="auth-title">Create account</h1>
+      <p class="auth-subtitle">Free forever — no credit card required</p>
+
+      <!-- Social signup -->
+      <button class="auth-social-btn" id="googleSignupBtn" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Sign up with Google
+      </button>
+
+      <div class="auth-divider">
+        <span class="auth-divider-text">or create with email</span>
+      </div>
+
+      <form class="auth-form" id="signupForm" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+          <div class="form-group">
+            <label class="form-label" for="signupFirst">First Name</label>
+            <input class="form-control" type="text" id="signupFirst" name="firstName" placeholder="First" required autocomplete="given-name" />
+            <span class="form-error">Required.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupLast">Last Name</label>
+            <input class="form-control" type="text" id="signupLast" name="lastName" placeholder="Last" required autocomplete="family-name" />
+            <span class="form-error">Required.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">Work Email</label>
+          <input class="form-control" type="email" id="signupEmail" name="email" placeholder="you@company.com" required autocomplete="email" />
+          <span class="form-error">Valid email required.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupCompany">Company Name</label>
+          <input class="form-control" type="text" id="signupCompany" name="company" placeholder="Your company or brand" autocomplete="organization" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupPassword">Password</label>
+          <div class="password-wrapper">
+            <input class="form-control" type="password" id="signupPassword" name="password" placeholder="Min. 8 characters" required autocomplete="new-password" minlength="8" />
+            <button type="button" class="password-toggle" onclick="togglePw('signupPassword',this)" aria-label="Toggle password visibility" tabindex="-1">
+              <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+          <span class="form-error">Password must be at least 8 characters.</span>
+          <!-- Strength indicator -->
+          <div style="margin-top:0.5rem">
+            <div class="progress-bar"><div class="progress-fill" id="pwStrengthBar" style="width:0%;background:var(--copper)"></div></div>
+            <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.25rem" id="pwStrengthLabel">Enter a password</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupConfirm">Confirm Password</label>
+          <div class="password-wrapper">
+            <input class="form-control" type="password" id="signupConfirm" name="confirm" placeholder="Repeat password" required autocomplete="new-password" />
+            <button type="button" class="password-toggle" onclick="togglePw('signupConfirm',this)" aria-label="Toggle password visibility" tabindex="-1">
+              <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+          <span class="form-error" id="confirmError">Passwords must match.</span>
+        </div>
+
+        <label style="display:flex;align-items:flex-start;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm);color:var(--text-secondary)">
+          <input type="checkbox" id="agreeTerms" style="accent-color:var(--copper);width:16px;height:16px;flex-shrink:0;margin-top:2px" required />
+          I agree to the <a href="#" style="color:var(--copper);font-weight:600;margin:0 3px">Terms of Service</a> and <a href="#" style="color:var(--copper);font-weight:600;margin:0 3px">Privacy Policy</a>
+        </label>
+
+        <button type="submit" class="btn btn--primary btn--lg" style="width:100%;justify-content:center" id="signupBtn">
+          Create Free Account →
+        </button>
+      </form>
+
+      <p class="auth-link">
+        Already have an account? <a href="login.html">Sign in →</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  window.injectNavbar = () => {};
+  window.injectFooter = () => {};
+
+  function togglePw(id, btn) {
+    const input = document.getElementById(id);
+    const open = btn.querySelector('.eye-open');
+    const closed = btn.querySelector('.eye-closed');
+    if (input.type === 'password') {
+      input.type = 'text';
+      open.style.display = 'none';
+      closed.style.display = '';
+    } else {
+      input.type = 'password';
+      open.style.display = '';
+      closed.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('signupForm');
+    const btn = document.getElementById('signupBtn');
+    const pwInput = document.getElementById('signupPassword');
+    const pwBar = document.getElementById('pwStrengthBar');
+    const pwLabel = document.getElementById('pwStrengthLabel');
+
+    // Password strength
+    pwInput.addEventListener('input', () => {
+      const pw = pwInput.value;
+      let strength = 0;
+      if (pw.length >= 8) strength++;
+      if (/[A-Z]/.test(pw)) strength++;
+      if (/[0-9]/.test(pw)) strength++;
+      if (/[^A-Za-z0-9]/.test(pw)) strength++;
+
+      const levels = [
+        { w: '10%', color: '#FF453A', label: 'Too weak' },
+        { w: '35%', color: '#FF9500', label: 'Weak' },
+        { w: '65%', color: '#B87333', label: 'Moderate' },
+        { w: '100%', color: '#C6FF00', label: 'Strong' },
+      ];
+
+      if (pw.length === 0) { pwBar.style.width='0%'; pwLabel.textContent='Enter a password'; return; }
+      const idx = Math.min(strength - 1, 3);
+      const lvl = levels[idx < 0 ? 0 : idx];
+      pwBar.style.width = lvl.w;
+      pwBar.style.background = lvl.color;
+      pwLabel.textContent = lvl.label;
+      pwLabel.style.color = lvl.color;
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+
+      form.querySelectorAll('[required]').forEach(f => {
+        if (!f.value.trim() && f.type !== 'checkbox') { valid = false; f.classList.add('error'); f.parentElement.querySelector('.form-error')?.classList.add('visible'); }
+        if (f.type === 'checkbox' && !f.checked) { valid = false; }
+      });
+
+      const emailEl = form.querySelector('[type="email"]');
+      if (emailEl?.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) { valid = false; emailEl.classList.add('error'); }
+
+      const pw = document.getElementById('signupPassword').value;
+      const confirm = document.getElementById('signupConfirm').value;
+      if (pw !== confirm || pw.length < 8) {
+        valid = false;
+        document.getElementById('signupConfirm').classList.add('error');
+        document.getElementById('confirmError').classList.add('visible');
+        document.getElementById('confirmError').textContent = pw !== confirm ? 'Passwords must match.' : 'Password too short.';
+      }
+
+      if (valid) {
+        btn.textContent = 'Creating account...';
+        btn.disabled = true;
+        setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
+      }
+    });
+
+    form.querySelectorAll('.form-control').forEach(f => f.addEventListener('input', () => { f.classList.remove('error'); f.parentElement.querySelector('.form-error')?.classList.remove('visible'); }));
+
+    document.getElementById('googleSignupBtn').addEventListener('click', () => {
+      document.getElementById('googleSignupBtn').textContent = '↻ Connecting...';
+      setTimeout(() => window.location.href = 'index.html', 1000);
+    });
+  });
+</script>
+</body>
+</html>
+

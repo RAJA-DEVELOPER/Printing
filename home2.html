@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrintCraft Studio — Home 2 | Discover Our Brand Universe</title>
+  <meta name="description" content="Explore PrintCraft's product portfolio, pricing estimator, client showcase, and why leading brands choose us for their print and branding needs." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════ -->
+<section class="page-hero" style="background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('assets/images/team.png'); background-size: cover; background-position: center;" aria-label="Hero">
+  <div class="page-hero__bg-text" aria-hidden="true">COLLECTION</div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="section-label">New Collection 2026</div>
+      <h1 class="page-hero__title">Print <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Loud.</span> Brand Bold.</h1>
+      <p class="page-hero__subtitle">Discover our expanded product universe — from micro-detail stationery to large-format impact print solutions.</p>
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-8)">
+        <a href="services.html" class="btn btn--primary btn--lg">Browse Products</a>
+        <a href="contact.html" class="btn btn--outline btn--lg">Request Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     1B. STATS BAR
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-label="Stats">
+  <div class="container">
+    <div style="display:flex;justify-content:space-evenly;gap:var(--space-8);flex-wrap:wrap;padding:var(--space-8) 0;border-top:1px solid var(--border)">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:800;color:var(--copper)"><span class="stat-counter" data-target="50" data-suffix="+">0</span></div>
+        <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Products</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:800;color:var(--copper)"><span class="stat-counter" data-target="24" data-suffix="h">0</span></div>
+        <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Turnaround</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:800;color:var(--copper)"><span class="stat-counter" data-target="5" data-suffix="★">0</span></div>
+        <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     2. PRODUCTS GRID
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="productsHeading">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Product Range</div>
+        <h2 class="section-title" id="productsHeading">Everything You<br><span>Can Print</span></h2>
+      </div>
+      <a href="services.html" class="btn btn--outline">All Products →</a>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">Visiting Cards</div>
+          <div class="product-card__sub">From $25</div>
+          <a href="services.html#cards" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="transition-delay:0.08s">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">Flyers</div>
+          <div class="product-card__sub">From $40</div>
+          <a href="services.html#flyers" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="transition-delay:0.16s">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">Banners</div>
+          <div class="product-card__sub">From $150</div>
+          <a href="services.html#banners" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="transition-delay:0.24s">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">Packaging</div>
+          <div class="product-card__sub">From $200</div>
+          <a href="services.html#packaging" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="transition-delay:0.32s">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">T-Shirts</div>
+          <div class="product-card__sub">From $12/pc</div>
+          <a href="services.html#merch" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="transition-delay:0.4s">
+        <div class="product-card__img" style="width:100%;height:100%;background-image:url('assets/images/team.png');background-size:cover;background-position:center;"></div>
+        <div class="product-card__overlay">
+          <div class="product-card__name">Branded Mugs</div>
+          <div class="product-card__sub">From $8/pc</div>
+          <a href="services.html#merch" class="product-card__action btn btn--primary btn--sm">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3. WHY CHOOSE US
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="whyHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Why PrintCraft</div>
+      <h2 class="section-title" id="whyHeading">The <span>Difference</span> Is Clear</h2>
+      <p class="section-subtitle">We combine cutting-edge technology with artisan craftsmanship to deliver print that stands above the rest.</p>
+    </div>
+
+    <div class="why-grid" style="margin-top:var(--space-12)">
+      <div class="why-card reveal">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></span>
+        <h3 class="why-card__title">Lightning Turnaround</h3>
+        <p class="why-card__text">Same-day and next-day options available. Rush printing without compromising quality — your deadlines are our priority.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.1s">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <h3 class="why-card__title">Precision Color Matching</h3>
+        <p class="why-card__text">Pantone-accurate color matching with G7-certified presses ensures your brand colors are reproduced with absolute fidelity.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.4-8.56"/><path d="M21 3v5h-5"/><path d="M6.5 12.5 9 15l3-5"/></svg></span>
+        <h3 class="why-card__title">Eco-Conscious Printing</h3>
+        <p class="why-card__text">FSC-certified papers, soy-based inks, and carbon-neutral production options for brands that care about the planet.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.0s">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <h3 class="why-card__title">Brand Confidentiality</h3>
+        <p class="why-card__text">NDA-protected workflow ensures your unreleased brand assets and designs stay completely secure throughout production.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.1s">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10Z"/></svg></span>
+        <h3 class="why-card__title">Global Delivery</h3>
+        <p class="why-card__text">Reliable tracked shipping to 50+ countries. International clients receive the same premium service and turnaround.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s">
+        <span class="why-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14.5V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3.5"/><path d="M2 14.5 6 10l4 4 6-6 4 4 2-2"/><path d="M2 14.5v-2a2 2 0 0 1 2-2h1"/><path d="M22 14.5v-2a2 2 0 0 0-2-2h-1"/></svg></span>
+        <h3 class="why-card__title">Dedicated Account Manager</h3>
+        <p class="why-card__text">Every client gets a dedicated creative partner who understands your brand and manages every project personally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. PORTFOLIO MASONRY
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="portfolioHeading">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title" id="portfolioHeading">Work That <span>Speaks</span></h2>
+      </div>
+      <a href="gallery.html" class="btn btn--outline">Full Gallery →</a>
+    </div>
+
+    <div class="masonry-grid">
+      <div class="masonry-item">
+        <div style="width:100%;height:280px;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+      <div class="masonry-item">
+        <div style="width:100%;height:360px;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+      <div class="masonry-item">
+        <div style="width:100%;height:220px;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+      <div class="masonry-item">
+        <div style="width:100%;height:320px;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+      <div class="masonry-item">
+        <div style="width:100%;height:260px;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+      <div class="masonry-item">
+        <div style="width:100%;height:400px;background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
+        <div class="masonry-overlay"><div class="masonry-zoom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. PRICE ESTIMATOR
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="estimatorHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Instant Pricing</div>
+      <h2 class="section-title" id="estimatorHeading">Get Your <span>Price Estimate</span></h2>
+      <p class="section-subtitle">Configure your order and receive an instant estimate — no registration required.</p>
+    </div>
+
+    <div class="estimator">
+      <div class="estimator__grid">
+        <form class="estimator__form" id="estimatorForm">
+          <div class="form-group">
+            <label class="form-label" for="estProduct">Product Type</label>
+            <select class="form-control" name="product" id="estProduct">
+              <option value="visiting-cards">Visiting Cards</option>
+              <option value="flyers">Flyers</option>
+              <option value="brochures">Brochures</option>
+              <option value="banners">Banners</option>
+              <option value="stickers">Stickers</option>
+              <option value="packaging">Packaging</option>
+              <option value="tshirts">T-Shirts</option>
+              <option value="mugs">Mugs</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="estQty">Quantity</label>
+            <select class="form-control" name="quantity" id="estQty">
+              <option value="50">50 units</option>
+              <option value="100" selected>100 units</option>
+              <option value="250">250 units</option>
+              <option value="500">500 units</option>
+              <option value="1000">1,000 units</option>
+              <option value="2500">2,500 units</option>
+              <option value="5000">5,000 units</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="estPaper">Paper / Material</label>
+            <select class="form-control" name="paper" id="estPaper">
+              <option value="standard">Standard (350gsm)</option>
+              <option value="premium">Premium (400gsm Silk)</option>
+              <option value="eco">Eco (Recycled)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="estFinish">Finishing</label>
+            <select class="form-control" name="finish" id="estFinish">
+              <option value="matte">Matte Laminate</option>
+              <option value="gloss">Gloss Laminate</option>
+              <option value="gloss-uv">Gloss UV</option>
+              <option value="soft-touch">Soft Touch</option>
+              <option value="foil">Gold Foil Stamp</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="estimator__output">
+          <div class="section-label" style="justify-content:center;margin-bottom:0.5rem">Estimated Price</div>
+          <div class="estimator__price" id="estimatePrice">$25.00</div>
+          <p class="estimator__disclaimer">*Indicative pricing. Final quote may vary based on artwork complexity and delivery option.</p>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:var(--space-6);width:100%;justify-content:center">Get Exact Quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     6. CLIENT LOGOS
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="clientsHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Trusted By</div>
+      <h2 class="section-title" id="clientsHeading">Brands That <span>Trust Us</span></h2>
+    </div>
+
+    <div class="logos-grid" style="margin-top:var(--space-12)">
+      <div class="logo-item"><div class="logo-text">LUXARA</div></div>
+      <div class="logo-item"><div class="logo-text">APEX</div></div>
+      <div class="logo-item"><div class="logo-text">NEXUS</div></div>
+      <div class="logo-item"><div class="logo-text">PRISM</div></div>
+      <div class="logo-item"><div class="logo-text">VANTA</div></div>
+      <div class="logo-item"><div class="logo-text">DRIFT</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     7. BLOG / INSIGHTS
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="insightsHeading">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Creative Insights</div>
+        <h2 class="section-title" id="insightsHeading">From Our <span>Studio</span></h2>
+      </div>
+      <a href="#" class="btn btn--outline">All Articles →</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-5)">
+      <article class="card reveal">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper);margin-bottom:var(--space-3)">Branding</div>
+        <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-3);letter-spacing:-0.02em">Why Paper Stock Is The Most Overlooked Brand Decision</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-5)">The tactile feel of your printed material communicates brand values before anyone reads a single word...</p>
+        <a href="#" style="color:var(--copper);font-size:var(--text-sm);font-weight:600">Read Article →</a>
+      </article>
+
+      <article class="card reveal" style="transition-delay:0.1s">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper);margin-bottom:var(--space-3)">Print Tech</div>
+        <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-3);letter-spacing:-0.02em">The Return of Gold Foil: Luxury Print Trends in 2026</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-5)">Metallic finishes are having a renaissance in premium print design. Here's how to use them without losing restraint...</p>
+        <a href="#" style="color:var(--copper);font-size:var(--text-sm);font-weight:600">Read Article →</a>
+      </article>
+
+      <article class="card reveal" style="transition-delay:0.2s">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper);margin-bottom:var(--space-3)">Sustainability</div>
+        <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-3);letter-spacing:-0.02em">Printing Green: Our Journey to Carbon Neutral Production</h3>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-5)">How we reduced our environmental footprint by 60% while actually improving print quality and consistency...</p>
+        <a href="#" style="color:var(--copper);font-size:var(--text-sm);font-weight:600">Read Article →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     8. NEWSLETTER CTA
+════════════════════════════════════════ -->
+<section class="cta-section section" aria-label="Newsletter">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="badge badge--neon" style="margin-bottom:var(--space-5)">Exclusive Offers</div>
+      <h2 class="cta-title">Stay in the <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Creative Loop</span></h2>
+      <p class="cta-subtitle">Get early access to new products, seasonal promotions, and print design inspiration — delivered to your inbox monthly.</p>
+      <form data-validate style="max-width:480px;margin:0 auto;display:flex;gap:var(--space-3);flex-wrap:wrap" onsubmit="return false;">
+        <div style="flex:1;min-width:220px" class="form-group">
+          <input class="form-control" type="email" name="email" placeholder="your@email.com" required id="newsletterEmail" />
+          <span class="form-error">Please enter a valid email.</span>
+        </div>
+        <button type="submit" class="btn btn--primary" style="align-self:flex-start">Subscribe →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js" type="module"></script>
+<script>
+  document.addEventListener('componentsLoaded', () => {
+    // Estimator
+    const estimatorForm = document.getElementById('estimatorForm');
+    const priceEl = document.getElementById('estimatePrice');
+
+    const pricing = {
+      'visiting-cards': { base: 25, perUnit: 0.08 },
+      'flyers': { base: 40, perUnit: 0.12 },
+      'brochures': { base: 80, perUnit: 0.25 },
+      'banners': { base: 150, perUnit: 0.5 },
+      'stickers': { base: 20, perUnit: 0.05 },
+      'packaging': { base: 200, perUnit: 1.2 },
+      'tshirts': { base: 30, perUnit: 8 },
+      'mugs': { base: 25, perUnit: 6 },
+    };
+
+    function calcPrice() {
+      const product = estimatorForm.querySelector('[name="product"]').value;
+      const qty = parseInt(estimatorForm.querySelector('[name="quantity"]').value);
+      const paper = estimatorForm.querySelector('[name="paper"]').value;
+      const finish = estimatorForm.querySelector('[name="finish"]').value;
+      const p = pricing[product] || pricing['visiting-cards'];
+      let price = p.base + qty * p.perUnit;
+      if (paper === 'premium') price *= 1.35;
+      if (paper === 'eco') price *= 1.1;
+      if (finish === 'gloss-uv') price *= 1.25;
+      if (finish === 'soft-touch') price *= 1.4;
+      if (finish === 'foil') price *= 1.6;
+      if (qty >= 500) price *= 0.9;
+      if (qty >= 1000) price *= 0.85;
+      priceEl.textContent = '$' + price.toFixed(2);
+    }
+
+    if (estimatorForm) {
+      estimatorForm.querySelectorAll('select').forEach(s => s.addEventListener('change', calcPrice));
+      calcPrice();
+    }
+
+    // Stat counters - animate when visible
+    const statCounters = document.querySelectorAll('.stat-counter');
+    if (statCounters.length) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            let current = 0;
+            const step = Math.ceil(target / 40);
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(timer); }
+              el.textContent = current + suffix;
+            }, 30);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      statCounters.forEach(c => observer.observe(c));
+    }
+
+    // Newsletter form validation
+    document.querySelectorAll('form[data-validate]').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const emailInput = form.querySelector('[type="email"]');
+        if (!emailInput?.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+          emailInput?.classList.add('error');
+          form.querySelector('.form-error')?.classList.add('visible');
+          return;
+        }
+        const btn = form.querySelector('[type="submit"]');
+        btn.textContent = '✓ Subscribed!';
+        btn.style.background = 'linear-gradient(135deg,#C6FF00,#A8D900)';
+        btn.style.color = '#0A0A0A';
+        form.querySelector('input').value = '';
+      });
+    });
+  });
+</script>
+</body>
+</html>
+

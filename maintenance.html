@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Mode — PrintCraft Studio</title>
+  <meta name="description" content="PrintCraft Studio is undergoing scheduled maintenance. We'll be back shortly with improvements." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- Noise overlay -->
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<section class="maint-page" aria-label="Maintenance mode">
+
+  <!-- Ambient orbs -->
+  <div class="maint-orb maint-orb--1" aria-hidden="true"></div>
+  <div class="maint-orb maint-orb--2" aria-hidden="true"></div>
+
+  <!-- Grid lines -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:80px 80px;pointer-events:none" aria-hidden="true"></div>
+
+  <div class="maint-content">
+    <!-- Logo -->
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:0.625rem;margin-bottom:3rem;text-decoration:none">
+      <div class="navbar__logo-mark">P</div>
+      <span class="navbar__logo-text" style="font-family:var(--font-display);font-weight:800;font-size:1.25rem;letter-spacing:-0.03em">Print<span style="color:var(--copper)">Craft</span></span>
+    </a>
+
+    <!-- Icon -->
+    <div class="maint-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></div>
+
+    <!-- Badge -->
+    <div class="badge badge--neon" style="margin-bottom:var(--space-6)">Scheduled Maintenance</div>
+
+    <h1 class="maint-title">We're <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Upgrading</span></h1>
+
+    <p class="maint-desc">
+      PrintCraft Studio is temporarily offline for scheduled system upgrades and performance improvements. We'll be back better than ever very shortly.
+    </p>
+
+    <!-- Progress -->
+    <div class="maint-progress">
+      <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
+        <span style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Upgrade Progress</span>
+        <span style="font-size:var(--text-xs);font-weight:600;color:var(--copper)" id="progressPct">87%</span>
+      </div>
+      <div class="progress-bar" style="height:6px">
+        <div class="progress-fill" id="maintenanceBar" data-width="87" style="width:87%"></div>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="maint-countdown" aria-label="Time remaining until maintenance complete">
+      <div class="maint-countdown-item">
+        <div class="maint-countdown-num" id="countDays">00</div>
+        <div class="maint-countdown-label">Days</div>
+      </div>
+      <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--border);line-height:1;padding-top:0.25rem">:</div>
+      <div class="maint-countdown-item">
+        <div class="maint-countdown-num" id="countHours">00</div>
+        <div class="maint-countdown-label">Hours</div>
+      </div>
+      <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--border);line-height:1;padding-top:0.25rem">:</div>
+      <div class="maint-countdown-item">
+        <div class="maint-countdown-num" id="countMins">00</div>
+        <div class="maint-countdown-label">Minutes</div>
+      </div>
+      <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--border);line-height:1;padding-top:0.25rem">:</div>
+      <div class="maint-countdown-item">
+        <div class="maint-countdown-num" id="countSecs">00</div>
+        <div class="maint-countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Notify form -->
+    <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8)">
+      <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:var(--space-4)">Get notified the moment we're back online:</p>
+      <form style="display:flex;gap:var(--space-3);flex-wrap:wrap" id="notifyForm">
+        <input class="form-control" type="email" placeholder="your@email.com" style="flex:1;min-width:200px" required id="notifyEmail" />
+        <button type="submit" class="btn btn--primary" id="notifyBtn">Notify Me</button>
+      </form>
+    </div>
+
+    <!-- Alternate contact -->
+    <div style="display:flex;align-items:center;gap:var(--space-6);justify-content:center;flex-wrap:wrap">
+      <div style="text-align:center">
+        <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:0.25rem">Emergency Contact</div>
+        <a href="tel:+97141234567" style="color:var(--copper);font-weight:600;font-size:var(--text-sm)">+971 4 123 4567</a>
+      </div>
+      <div style="width:1px;height:30px;background:var(--border)"></div>
+      <div style="text-align:center">
+        <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:0.25rem">Email Us</div>
+        <a href="mailto:hello@printcraft.studio" style="color:var(--copper);font-weight:600;font-size:var(--text-sm)">hello@printcraft.studio</a>
+      </div>
+      <div style="width:1px;height:30px;background:var(--border)"></div>
+      <div style="text-align:center">
+        <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:0.25rem">Status Page</div>
+        <a href="#" style="color:var(--copper);font-weight:600;font-size:var(--text-sm)">status.printcraft.studio</a>
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <p style="font-size:var(--text-xs);color:var(--text-muted);margin-top:3rem">© 2026 PrintCraft Studio. All rights reserved.</p>
+  </div>
+</section>
+
+<script>
+  // Countdown: target = now + 4 hours (demo)
+  const target = new Date(Date.now() + 4 * 3600 * 1000);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countDays').textContent = String(d).padStart(2, '0');
+    document.getElementById('countHours').textContent = String(h).padStart(2, '0');
+    document.getElementById('countMins').textContent = String(m).padStart(2, '0');
+    document.getElementById('countSecs').textContent = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Notify form
+  document.getElementById('notifyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('notifyEmail');
+    const btn = document.getElementById('notifyBtn');
+    if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      email.classList.add('error');
+      return;
+    }
+    btn.textContent = '✓ Subscribed!';
+    btn.style.background = 'linear-gradient(135deg,#C6FF00,#A8D900)';
+    btn.style.color = '#0A0A0A';
+    email.value = '';
+    btn.disabled = true;
+  });
+
+  // Maintenance progress animation
+  const bar = document.getElementById('maintenanceBar');
+  const pct = document.getElementById('progressPct');
+  let progress = 87;
+  setInterval(() => {
+    if (progress < 99) {
+      progress += Math.random() * 0.5;
+      bar.style.width = progress.toFixed(1) + '%';
+      pct.textContent = progress.toFixed(0) + '%';
+    }
+  }, 5000);
+</script>
+</body>
+</html>
+

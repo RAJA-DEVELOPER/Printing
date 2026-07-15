@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — PrintCraft Studio | Our Print & Branding Portfolio</title>
+  <meta name="description" content="Browse PrintCraft's portfolio of premium print and branding projects — from business cards to full brand identities and custom merchandise." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     1. GALLERY HERO
+════════════════════════════════════════ -->
+<section class="page-hero" style="background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('assets/images/press.png'); background-size: cover; background-position: center;" aria-label="Gallery hero">
+  <div class="page-hero__bg-text" aria-hidden="true">GALLERY</div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="section-label">Our Work</div>
+      <h1 class="page-hero__title">A Portfolio of <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Craft</span></h1>
+      <p class="page-hero__subtitle">Every project tells a brand story. Browse our curated selection of print and branding work from across industries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     2. FILTER TABS
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-label="Gallery filter">
+  <div class="container">
+    <div class="gallery-filter tabs-nav" role="tablist" aria-label="Filter gallery">
+      <button class="tab-btn active" data-filter="all" role="tab" id="tab-all" aria-selected="true">All Work</button>
+      <button class="tab-btn" data-filter="cards" role="tab" id="tab-cards">Visiting Cards</button>
+      <button class="tab-btn" data-filter="print" role="tab" id="tab-print">Print</button>
+      <button class="tab-btn" data-filter="branding" role="tab" id="tab-branding">Branding</button>
+      <button class="tab-btn" data-filter="packaging" role="tab" id="tab-packaging">Packaging</button>
+      <button class="tab-btn" data-filter="merch" role="tab" id="tab-merch">Merchandise</button>
+      <button class="tab-btn" data-filter="banners" role="tab" id="tab-banners">Banners</button>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         3. GALLERY GRID + LIGHTBOX
+    ════════════════════════════════════════ -->
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- Visiting Cards -->
+      <div class="gallery-item reveal" data-category="cards" data-full="#" tabindex="0" role="button" aria-label="Luminary Gold Foil Cards">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://plus.unsplash.com/premium_photo-1682145472891-7790bb29313c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Luminary Gold Foil</div>
+          <span class="badge">Visiting Cards</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="cards" style="transition-delay:0.05s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://plus.unsplash.com/premium_photo-1682145869177-72fcf868b34d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Obsidian Matte Series</div>
+          <span class="badge">Visiting Cards</span>
+        </div>
+      </div>
+
+      <!-- Branding -->
+      <div class="gallery-item reveal" data-category="branding" style="transition-delay:0.1s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1715059382493-213b706e95f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM4fHxwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">APEX Brand Identity</div>
+          <span class="badge">Branding</span>
+        </div>
+      </div>
+
+      <!-- Packaging -->
+      <div class="gallery-item reveal" data-category="packaging" style="transition-delay:0.15s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1726219836040-d9b7b8c0d46f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Artisan Cosmetics Box</div>
+          <span class="badge">Packaging</span>
+        </div>
+      </div>
+
+      <!-- Print -->
+      <div class="gallery-item reveal" data-category="print" style="transition-delay:0.2s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Annual Report Design</div>
+          <span class="badge">Print</span>
+        </div>
+      </div>
+
+      <!-- Merchandise -->
+      <div class="gallery-item reveal" data-category="merch" style="transition-delay:0.25s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1676474506722-4bf98059b74a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Nexus Team Tees</div>
+          <span class="badge">Merchandise</span>
+        </div>
+      </div>
+
+      <!-- Banners -->
+      <div class="gallery-item reveal" data-category="banners" style="transition-delay:0.3s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('assets/images/press.png');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Exhibition Banner Set</div>
+          <span class="badge">Banners</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="cards" style="transition-delay:0.05s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://plus.unsplash.com/premium_photo-1682145489846-081721a9b272?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Rose Gold Foil Cards</div>
+          <span class="badge">Visiting Cards</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="branding" style="transition-delay:0.1s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1581508512961-0e3b9524db40?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">TechVenture Identity</div>
+          <span class="badge">Branding</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="packaging" style="transition-delay:0.15s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1562155695-fb6e1f95fcfd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Premium Gift Box</div>
+          <span class="badge">Packaging</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="print" style="transition-delay:0.2s" tabindex="0" role="button">
+        <div class="gallery-item__img" style="width:100%;height:100%;background-image:url('assets/images/elena.png');background-size:cover;background-position:center;"></div>
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__title">Luxury Brochure</div>
+          <span class="badge">Print</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <div class="lightbox__content">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+    <button class="lightbox__nav lightbox__prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox__nav lightbox__next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox__img" id="lightboxImg" style="width:min(600px,80vw);height:min(500px,70vh);background-image:url('https://images.unsplash.com/photo-1563968743333-044cef800494?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;border-radius:var(--radius-xl);"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     4. FEATURED PROJECT
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="featuredProjHeading">
+  <div class="container">
+    <div class="section-label">Case Study</div>
+    <h2 class="section-title" id="featuredProjHeading">Featured <span>Project</span></h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-top:var(--space-10)">
+      <div class="reveal reveal--left" style="aspect-ratio:4/3;border-radius:var(--radius-2xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border)">
+        <div style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1693031630177-b897fb9d7154?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center"></div>
+      </div>
+      <div class="reveal reveal--right">
+        <div class="badge" style="margin-bottom:var(--space-4)">Complete Brand System</div>
+        <h3 style="font-size:var(--text-3xl);font-weight:800;letter-spacing:-0.03em;margin-bottom:var(--space-4)">Luminary Group — Full Brand Identity</h3>
+        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-4)">A complete brand identity project covering logo, brand guidelines, full stationery suite, office signage, corporate gift set, and digital brand assets — delivered in 6 weeks.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-6)">
+          <div><div style="font-size:var(--text-sm);color:var(--text-muted)">Industry</div><div style="font-weight:600">Financial Services</div></div>
+          <div><div style="font-size:var(--text-sm);color:var(--text-muted)">Deliverables</div><div style="font-weight:600">28 Brand Assets</div></div>
+          <div><div style="font-size:var(--text-sm);color:var(--text-muted)">Timeline</div><div style="font-weight:600">6 Weeks</div></div>
+          <div><div style="font-size:var(--text-sm);color:var(--text-muted)">Finish</div><div style="font-weight:600">Gold Foil + Soft Touch</div></div>
+        </div>
+        <a href="contact.html" class="btn btn--primary">Start a Similar Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. BEFORE/AFTER SHOWCASE
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="beforeAfterHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Transformation</div>
+      <h2 class="section-title" id="beforeAfterHeading">Brand <span>Makeovers</span></h2>
+      <p class="section-subtitle">See the power of premium print in transforming brand perception.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-top:var(--space-12)">
+      <div class="card reveal" style="padding:0;overflow:hidden">
+        <div style="padding:0.75rem 1rem;background:var(--graphite-mid);font-size:var(--text-xs);color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid var(--border)">Before — Standard Print</div>
+        <div style="height:240px;overflow:hidden;background:var(--bg-card)">
+          <div style="width:100%;height:100%;background-image:url('https://images.unsplash.com/photo-1663433453056-8afb0da56588?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center;opacity:0.4;filter:grayscale(1)"></div>
+        </div>
+      </div>
+      <div class="card reveal" style="padding:0;overflow:hidden;border-color:var(--copper);transition-delay:0.1s">
+        <div style="padding:0.75rem 1rem;background:rgba(184,115,51,0.15);font-size:var(--text-xs);color:var(--copper);letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid var(--border-accent)">After — PrintCraft</div>
+        <div style="height:240px;overflow:hidden;background:var(--bg-card)">
+          <div style="width:100%;height:100%;background-image:url('https://plus.unsplash.com/premium_photo-1682145762522-cf0ea19fcd89?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fHByaW50aW5nfGVufDB8fDB8fHww');background-size:cover;background-position:center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     6. PROCESS GALLERY
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="processGalleryHeading">
+  <div class="container">
+    <div class="section-label">Behind the Scenes</div>
+    <h2 class="section-title" id="processGalleryHeading">The Making of <span>Excellence</span></h2>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin-top:var(--space-12)">
+      <div class="reveal" style="border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:1;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+      <div class="reveal" style="border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:1;background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
+      <div class="reveal" style="border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:1;background-image:url('assets/images/team.png');background-size:cover;background-position:center;"></div>
+      <div class="reveal" style="border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:1;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     7. CLIENT SPOTLIGHT
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="spotlightHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Client Story</div>
+      <h2 class="section-title" id="spotlightHeading">In the <span>Spotlight</span></h2>
+    </div>
+
+    <div class="testimonial-card reveal" style="max-width:700px;margin:var(--space-12) auto 0">
+      <div class="testimonial-stars" style="justify-content:center">★★★★★</div>
+      <p class="testimonial-text" style="text-align:center;font-size:var(--text-md)">"PrintCraft didn't just print our brand — they elevated it. The quality of our new visiting cards made clients ask if we had rebranded entirely. We had, in a way. The reaction is worth every penny."</p>
+      <div class="testimonial-author" style="justify-content:center">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--grad-copper);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;color:var(--obsidian)">N</div>
+        <div>
+          <div class="testimonial-name" style="font-size:var(--text-md)">Nour Al-Rashid</div>
+          <div class="testimonial-role">Founder, Cascade Architecture</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     8. SUBMIT PROJECT CTA
+════════════════════════════════════════ -->
+<section class="cta-section section" aria-label="Start your project">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label" style="justify-content:center;margin-bottom:var(--space-5)">Start Creating</div>
+      <h2 class="cta-title">Your Brand Deserves to<br><span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Be Featured Here</span></h2>
+      <p class="cta-subtitle">Join over 2,500 brands that trust PrintCraft to make their first impression extraordinary.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn--primary btn--lg">Start Your Project</a>
+        <a href="services.html" class="btn btn--outline btn--lg">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js" type="module"></script>
+<script>
+  document.addEventListener('componentsLoaded', () => {
+    // Gallery Filter
+    const filterBtns = document.querySelectorAll('.tab-btn[data-filter]');
+    const galleryItems = document.querySelectorAll('.gallery-item[data-category]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected','true');
+
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          if (match) {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+            item.style.display = '';
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(() => { if(filter !== 'all' && item.dataset.category !== filter) item.style.display = 'none'; }, 350);
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    const items = Array.from(galleryItems);
+    let current = 0;
+
+    function openLightbox(idx) {
+      current = idx;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => { current = (current - 1 + items.length) % items.length; });
+    nextBtn.addEventListener('click', () => { current = (current + 1) % items.length; });
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+    });
+  });
+</script>
+</body>
+</html>
+

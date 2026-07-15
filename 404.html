@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | PrintCraft Studio</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Return to PrintCraft Studio's homepage." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<section class="error-page" aria-label="404 error page">
+
+  <!-- Ambient orbs -->
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none" aria-hidden="true">
+    <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(184,115,51,0.08);filter:blur(100px);top:-200px;right:-200px"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(198,255,0,0.05);filter:blur(80px);bottom:-100px;left:10%"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:80px 80px"></div>
+  </div>
+
+  <div class="error-page__bg-num" aria-hidden="true">404</div>
+
+  <div class="error-page__content">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Lost in the Print Shop</h1>
+    <p class="error-desc">Looks like this page wandered off the press. The URL you're looking for doesn't exist or has been moved.</p>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-12)">
+      <a href="index.html" class="btn btn--primary btn--lg">← Back to Home</a>
+      <a href="contact.html" class="btn btn--outline btn--lg">Contact Support</a>
+    </div>
+
+    <!-- Helpful links -->
+    <div style="border-top:1px solid var(--border);padding-top:var(--space-8)">
+      <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-5)">You might be looking for</p>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:center">
+        <a href="services.html" class="badge badge--glass" style="text-decoration:none;padding:0.5rem 1rem;font-size:var(--text-sm)">Services</a>
+        <a href="gallery.html" class="badge badge--glass" style="text-decoration:none;padding:0.5rem 1rem;font-size:var(--text-sm)">Gallery</a>
+        <a href="about.html" class="badge badge--glass" style="text-decoration:none;padding:0.5rem 1rem;font-size:var(--text-sm)">About</a>
+        <a href="contact.html" class="badge badge--glass" style="text-decoration:none;padding:0.5rem 1rem;font-size:var(--text-sm)">Contact</a>
+        <a href="dashboard.html" class="badge badge--glass" style="text-decoration:none;padding:0.5rem 1rem;font-size:var(--text-sm)">Dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js" type="module"></script>
+</body>
+</html>
+
