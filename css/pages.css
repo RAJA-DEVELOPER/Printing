@@ -1686,6 +1686,12 @@
   align-items: center;
   justify-content: center;
   min-height: 180px;
+  overflow: visible;
+}
+
+.topics-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .topics-card__icon {

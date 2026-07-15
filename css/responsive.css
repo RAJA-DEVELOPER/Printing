@@ -60,13 +60,37 @@
     display: none;
   }
 
-  .hamburger {
+  .navbar__hamburger {
     display: flex;
   }
 
   /* Show login/signup buttons in mobile menu */
   .navbar__mobile .btn {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar__mobile {
+    padding: 5rem 1.5rem 1.5rem;
+    justify-content: flex-start;
+    padding-top: 5rem;
+    overflow-y: auto;
+  }
+
+  .navbar__mobile-link {
+    font-size: var(--text-2xl);
+    padding: var(--space-3) 0;
+  }
+
+  .navbar__mobile-actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .navbar__mobile-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -86,6 +110,21 @@
   .ctrl-divider,
   .navbar__profile-btn {
     display: none;
+  }
+
+  .navbar__mobile {
+    padding: 4.5rem 1.25rem 1.25rem;
+  }
+
+  .navbar__mobile-link {
+    font-size: var(--text-xl);
+    padding: var(--space-2) 0;
+  }
+
+  /* Close button positioning */
+  .navbar__mobile .navbar__hamburger {
+    top: 1rem;
+    right: 1rem;
   }
 }
 

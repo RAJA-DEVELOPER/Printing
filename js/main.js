@@ -170,7 +170,6 @@ function injectNavbar() {
                 </a>
               </div>
             </div>
-            <a href="dashboard.html" class="btn btn--ghost btn--sm" style="display:none" id="navDashBtn">Dashboard</a>
             <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -314,16 +313,7 @@ function initNavbar() {
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileClose');
-  const dashBtn = document.getElementById('navDashBtn');
-
   if (!navbar) return;
-
-  // Show dashboard button on md+ screens
-  function updateDashBtn() {
-    if (dashBtn) dashBtn.style.display = window.innerWidth >= 768 ? 'inline-flex' : 'none';
-  }
-  updateDashBtn();
-  window.addEventListener('resize', updateDashBtn, { passive: true });
 
   // Scroll behavior
   let lastScroll = 0;
