@@ -282,7 +282,8 @@
   width: 100%;
 }
 
-.navbar__mobile-link:hover { color: var(--copper); }
+.navbar__mobile-link:hover,
+.navbar__mobile-link.active { color: var(--copper); }
 
 .navbar__mobile-actions {
   display: flex;

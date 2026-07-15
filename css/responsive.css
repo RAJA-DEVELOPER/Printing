@@ -664,14 +664,26 @@
   }
 }
 
-/* Quote form */
+/* Quote form & contact form */
 @media (max-width: 767px) {
-  .quote-form__grid {
-    grid-template-columns: 1fr;
+  .quote-form {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
   }
-
-  .quote-form__grid [style*="grid-column:span 2"] {
+  .quote-form__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-4);
+  }
+  .quote-form__grid .form-group:last-child,
+  .quote-form__grid [style*="grid-column:span 2"],
+  .quote-form__grid div[style*="grid-column:span 2"] {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 479px) {
+  .quote-form {
+    padding: var(--space-5);
   }
 }
 
@@ -1494,18 +1506,29 @@
   }
 }
 
-/* ----------------------------------------
-   INDEX / HOME � EXTRA SMALL (=360px)
-   ---------------------------------------- */
-@media (max-width: 360px) {
-  /* Hero CTA buttons � full width stack */
-  .page-hero__content > div[style*="display:flex"][style*="gap:var(--space-4)"][style*="flex-wrap:wrap"][style*="margin-top:var(--space-8)"] {
+/* ════════════════════════════════════════
+   HERO CTA BUTTONS — SMALL
+   ════════════════════════════════════════ */
+@media (max-width: 479px) {
+  .page-hero__content > div[style*="display:flex"][style*="flex-wrap:wrap"] {
     flex-direction: column;
   }
-  .page-hero__content > div[style*="display:flex"][style*="gap:var(--space-4)"][style*="flex-wrap:wrap"][style*="margin-top:var(--space-8)"] .btn {
+  .page-hero__content > div[style*="display:flex"][style*="flex-wrap:wrap"] .btn {
     width: 100%;
     justify-content: center;
   }
+}
+
+@media (max-width: 360px) {
+  .page-hero__content > div[style*="display:flex"][style*="flex-wrap:wrap"] .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: var(--text-sm);
+  }
+}
+
+/* ----------------------------------------
+   INDEX / HOME � EXTRA SMALL (=360px)
+   ---------------------------------------- */
 
   /* Services overview card padding */
   .service-card {

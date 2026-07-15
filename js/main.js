@@ -187,7 +187,7 @@ function injectNavbar() {
         <span class="hamburger-line"></span>
       </button>
       ${navLinks.map(link =>
-        `<a href="${link.href}" class="navbar__mobile-link">${link.label}</a>`
+        `<a href="${link.href}" class="navbar__mobile-link ${currentPage === link.href ? 'active' : ''}">${link.label}</a>`
       ).join('')}
       <div class="navbar__mobile-actions"></div>
     </div>
@@ -241,6 +241,7 @@ function injectFooter() {
               <a href="about.html" class="footer__link">About</a>
               <a href="services.html" class="footer__link">Services</a>
               <a href="gallery.html" class="footer__link">Gallery</a>
+              <a href="blog.html" class="footer__link">Blog</a>
               <a href="contact.html" class="footer__link">Contact</a>
               <a href="dashboard.html" class="footer__link">Client Portal</a>
             </div>
