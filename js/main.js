@@ -96,6 +96,7 @@ function injectNavbar() {
     { href: 'about.html', label: 'About' },
     { href: 'services.html', label: 'Services' },
     { href: 'gallery.html', label: 'Gallery' },
+    { href: 'blog.html', label: 'Blog' },
     { href: 'contact.html', label: 'Contact' },
   ];
 
@@ -150,9 +151,25 @@ function injectNavbar() {
             </div>
 
             <div class="ctrl-divider"></div>
-            <a href="login.html" class="navbar__profile-btn" aria-label="Login or Sign up" title="Login / Sign up">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-            </a>
+            <div class="profile-dropdown">
+              <button class="navbar__profile-btn" id="profileToggle" aria-label="Account menu" title="Account">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+              </button>
+              <div class="profile-dropdown__menu" id="profileMenu">
+                <a href="login.html" class="profile-dropdown__item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                  Login
+                </a>
+                <a href="dashboard.html" class="profile-dropdown__item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg>
+                  User Dashboard
+                </a>
+                <a href="admin.html" class="profile-dropdown__item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+                  Admin Dashboard
+                </a>
+              </div>
+            </div>
             <a href="dashboard.html" class="btn btn--ghost btn--sm" style="display:none" id="navDashBtn">Dashboard</a>
             <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
               <span class="hamburger-line"></span>
@@ -174,10 +191,15 @@ function injectNavbar() {
         `<a href="${link.href}" class="navbar__mobile-link">${link.label}</a>`
       ).join('')}
       <div class="navbar__mobile-actions">
-        <a href="login.html" class="btn btn--outline">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>Sign In
+        <a href="login.html" class="btn btn--outline" style="width:100%">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Login
         </a>
-        <a href="dashboard.html" class="btn btn--outline">Dashboard</a>
+        <a href="dashboard.html" class="btn btn--outline" style="width:100%">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg>User Dashboard
+        </a>
+        <a href="admin.html" class="btn btn--outline" style="width:100%">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem;vertical-align:middle"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>Admin Dashboard
+        </a>
       </div>
       <!-- Mobile Theme/RTL Controls -->
       <div style="display:flex;align-items:center;gap:1rem;padding:1.5rem 0 0;border-top:1px solid var(--border);margin-top:auto">
@@ -272,9 +294,9 @@ function injectFooter() {
         <div class="footer__bottom">
           <p class="footer__copy">© ${new Date().getFullYear()} PrintCraft Studio. All rights reserved.</p>
           <div class="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Cookie Policy</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="privacy-policy.html#cookies">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -308,8 +330,8 @@ function initNavbar() {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     navbar.classList.toggle('scrolled', scrollY > 50);
-    // Hide on scroll down, show on scroll up (for mobile)
-    if (scrollY > 300 && scrollY > lastScroll && !mobileMenu.classList.contains('open')) {
+    // Hide on scroll down, show on scroll up (mobile only)
+    if (window.innerWidth < 1024 && scrollY > 300 && scrollY > lastScroll && !mobileMenu.classList.contains('open')) {
       navbar.style.transform = 'translateY(-100%)';
     } else {
       navbar.style.transform = '';
@@ -327,6 +349,21 @@ function initNavbar() {
 
   if (hamburger) hamburger.addEventListener('click', toggleMenu);
   if (mobileClose) mobileClose.addEventListener('click', toggleMenu);
+
+  // Profile dropdown toggle
+  const profileToggle = document.getElementById('profileToggle');
+  const profileMenu = document.getElementById('profileMenu');
+  if (profileToggle && profileMenu) {
+    profileToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      profileMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', e => {
+      if (!profileToggle.parentElement.contains(e.target)) {
+        profileMenu.classList.remove('open');
+      }
+    });
+  }
 
   // Close on mobile link click
   if (mobileMenu) {

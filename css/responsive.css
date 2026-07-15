@@ -82,6 +82,11 @@
   .navbar__hamburger {
     display: flex;
   }
+  .ctrl-panel,
+  .ctrl-divider,
+  .navbar__profile-btn {
+    display: none;
+  }
 }
 
 /* ════════════════════════════════════════
@@ -1123,8 +1128,8 @@
 }
 
 /* ════════════════════════════════════════
-   NEWSLETTER FORM — RESPONSIVE
-   ════════════════════════════════════════ */
+    NEWSLETTER FORM — RESPONSIVE
+    ════════════════════════════════════════ */
 @media (max-width: 479px) {
   .newsletter-form {
     flex-direction: column;
@@ -1137,6 +1142,116 @@
   .newsletter-form .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ════════════════════════════════════════
+   BLOG PAGE — RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-card__body {
+    padding: var(--space-4);
+  }
+
+  .blog-card__title {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 479px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: var(--space-2) !important;
+  }
+
+  .pagination .btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* Newsletter form in blog */
+  #newsletterForm {
+    flex-direction: column;
+  }
+
+  #newsletterForm .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Editor's note card */
+  blockquote[style*="font-family:var(--font-display)"] {
+    font-size: var(--text-lg) !important;
+  }
+}
+
+/* ════════════════════════════════════════
+   PRIVACY & TERMS PAGES — RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 767px) {
+  [style*="padding-left:var(--space-5)"] {
+    padding-left: var(--space-4) !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .section [style*="max-width:800px"] h2[style*="font-size:var(--text-xl)"] {
+    font-size: var(--text-lg) !important;
+  }
+}
+
+/* ════════════════════════════════════════
+   HOME 2 — RESPONSIVE EXTRA
+   ════════════════════════════════════════ */
+@media (max-width: 479px) {
+  .section--mid [style*="font-size:var(--text-5xl)"][style*="font-weight:800"] {
+    font-size: var(--text-3xl) !important;
+  }
+}
+
+/* ════════════════════════════════════════
+   ADMIN DASHBOARD — RESPONSIVE EXTRA
+   ════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .dash-content {
+    padding: 1.25rem;
+  }
+
+  .dash-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .dash-content {
+    padding: 1rem;
+  }
+
+  .dash-overview-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* Admin analytics sub-grids */
+@media (max-width: 767px) {
+  .dash-section [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Admin chart container */
+@media (max-width: 479px) {
+  .chart-container {
+    height: 180px !important;
   }
 }
 

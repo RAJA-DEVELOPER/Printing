@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — PrintCraft Studio</title>
+  <meta name="description" content="PrintCraft Studio's blog — insights on print design, branding, sustainability, and the craft of premium print production." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<section class="page-hero" style="background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('assets/images/brand_identity.png'); background-size: cover; background-position: center;" aria-label="Blog hero">
+  <div class="page-hero__bg-text" aria-hidden="true">BLOG</div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="section-label">Creative Insights</div>
+      <h1 class="page-hero__title">From Our <span style="background:var(--grad-text-copper);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Studio</span></h1>
+      <p class="page-hero__subtitle">Thoughts on print design, brand strategy, production craftsmanship, and the stories behind the work we love.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mid">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-10)">
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button class="blog-filter active" data-filter="all">All</button>
+        <button class="blog-filter" data-filter="branding">Branding</button>
+        <button class="blog-filter" data-filter="print-tech">Print Tech</button>
+        <button class="blog-filter" data-filter="sustainability">Sustainability</button>
+        <button class="blog-filter" data-filter="design">Design</button>
+      </div>
+      <div style="display:flex;gap:var(--space-3);align-items:center">
+        <span style="font-size:var(--text-xs);color:var(--text-muted)">Showing 9 articles</span>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card reveal" data-category="branding">
+        <div class="blog-card__img" style="background-image:url('assets/images/visiting_cards.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Branding</span>
+            <span class="blog-card__date">Jul 12, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Why Paper Stock Is The Most Overlooked Brand Decision</h3>
+          <p class="blog-card__excerpt">The tactile feel of your printed material communicates brand values before anyone reads a single word. Here's how to choose the right paper for your identity.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="print-tech" style="transition-delay:0.08s">
+        <div class="blog-card__img" style="background-image:url('assets/images/packaging.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Print Tech</span>
+            <span class="blog-card__date">Jul 8, 2026</span>
+          </div>
+          <h3 class="blog-card__title">The Return of Gold Foil: Luxury Print Trends in 2026</h3>
+          <p class="blog-card__excerpt">Metallic finishes are having a renaissance in premium print design. We explore the techniques, costs, and creative possibilities of modern foil stamping.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="sustainability" style="transition-delay:0.16s">
+        <div class="blog-card__img" style="background-image:url('assets/images/brochure.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Sustainability</span>
+            <span class="blog-card__date">Jul 5, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Printing Green: Our Journey to Carbon Neutral Production</h3>
+          <p class="blog-card__excerpt">How we reduced our environmental footprint by 60% while actually improving print quality and consistency across every product line.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="design" style="transition-delay:0s">
+        <div class="blog-card__img" style="background-image:url('assets/images/brand_identity.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Design</span>
+            <span class="blog-card__date">Jul 1, 2026</span>
+          </div>
+          <h3 class="blog-card__title">5 Typography Rules Every Print Designer Should Know</h3>
+          <p class="blog-card__excerpt">Great typography is invisible. Bad typography is everywhere. Master these five principles and your print work will instantly look more professional.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="branding" style="transition-delay:0.08s">
+        <div class="blog-card__img" style="background-image:url('assets/images/team.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Branding</span>
+            <span class="blog-card__date">Jun 25, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Building a Cohesive Brand Identity Across Print and Digital</h3>
+          <p class="blog-card__excerpt">Your brand doesn't live exclusively on screens. Learn how to maintain consistency from Instagram to letterhead without losing the magic of either medium.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="print-tech" style="transition-delay:0.16s">
+        <div class="blog-card__img" style="background-image:url('assets/images/press.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Print Tech</span>
+            <span class="blog-card__date">Jun 18, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Digital vs. Offset Printing: Which One Is Right for Your Project?</h3>
+          <p class="blog-card__excerpt">Not all print jobs are created equal. We break down the strengths of each method so you can make an informed decision for your next project.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="design" style="transition-delay:0s">
+        <div class="blog-card__img" style="background-image:url('assets/images/tshirt.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Design</span>
+            <span class="blog-card__date">Jun 10, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Color Management 101: Getting Accurate Prints Every Time</h3>
+          <p class="blog-card__excerpt">What you see on screen is rarely what you get on paper. Understanding color spaces, profiles, and proofing can save your next project from disaster.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="sustainability" style="transition-delay:0.08s">
+        <div class="blog-card__img" style="background-image:url('assets/images/packaging.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Sustainability</span>
+            <span class="blog-card__date">Jun 3, 2026</span>
+          </div>
+          <h3 class="blog-card__title">Eco-Friendly Packaging That Doesn't Compromise on Luxury</h3>
+          <p class="blog-card__excerpt">Sustainable doesn't have to mean boring. Discover how recycled materials, soy-based inks, and minimalist design create packaging that's both premium and responsible.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="branding" style="transition-delay:0.16s">
+        <div class="blog-card__img" style="background-image:url('assets/images/brand_identity.png')"></div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Branding</span>
+            <span class="blog-card__date">May 28, 2026</span>
+          </div>
+          <h3 class="blog-card__title">The Power of a Press Kit: Why Every Brand Needs One</h3>
+          <p class="blog-card__excerpt">A well-crafted press kit is more than a folder of documents — it's a physical embodiment of your brand story that journalists and partners will remember.</p>
+          <a href="#" class="blog-card__link">Read Article →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="pagination" style="display:flex;justify-content:center;gap:var(--space-3);margin-top:var(--space-12)">
+      <button class="btn btn--ghost btn--sm pag-prev" disabled>← Previous</button>
+      <button class="btn btn--primary btn--sm pag-page" data-page="1">1</button>
+      <button class="btn btn--ghost btn--sm pag-page" data-page="2">2</button>
+      <button class="btn btn--ghost btn--sm pag-page" data-page="3">3</button>
+      <button class="btn btn--ghost btn--sm pag-next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SECTION 2: NEWSLETTER
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-labelledby="newsletterHeading">
+  <div class="container container--narrow">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Stay Informed</div>
+      <h2 class="section-title" id="newsletterHeading">Subscribe to Our <span>Newsletter</span></h2>
+      <p class="section-subtitle">Get weekly insights on print design, branding strategy, and studio stories delivered straight to your inbox. No spam — just craft.</p>
+    </div>
+
+    <div style="max-width:520px;margin:var(--space-10) auto 0">
+      <form id="newsletterForm" style="display:flex;gap:var(--space-3)">
+        <input class="form-control" type="email" placeholder="Enter your email address" required style="flex:1;min-width:0" />
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;margin-top:var(--space-6);font-size:var(--text-xs);color:var(--text-muted)">
+        <span style="display:flex;align-items:center;gap:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Weekly digest</span>
+        <span style="display:flex;align-items:center;gap:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Exclusive content</span>
+        <span style="display:flex;align-items:center;gap:var(--space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unsubscribe anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SECTION 3: POPULAR TOPICS
+════════════════════════════════════════ -->
+<section class="section" aria-labelledby="topicsHeading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label" style="justify-content:center">Browse by Topic</div>
+      <h2 class="section-title" id="topicsHeading">Popular <span>Categories</span></h2>
+    </div>
+
+    <div class="topics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-4);margin-top:var(--space-10)">
+      <div class="card reveal topics-card" data-filter="branding">
+        <div class="topics-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3 class="topics-card__title">Branding</h3>
+        <p class="topics-card__desc">Identity, strategy, and visual systems</p>
+      </div>
+      <div class="card reveal topics-card" data-filter="print-tech" style="transition-delay:0.08s">
+        <div class="topics-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></div>
+        <h3 class="topics-card__title">Print Tech</h3>
+        <p class="topics-card__desc">Techniques, tools, and production insights</p>
+      </div>
+      <div class="card reveal topics-card" data-filter="sustainability" style="transition-delay:0.16s">
+        <div class="topics-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 class="topics-card__title">Sustainability</h3>
+        <p class="topics-card__desc">Eco-friendly materials and practices</p>
+      </div>
+      <div class="card reveal topics-card" data-filter="design" style="transition-delay:0.24s">
+        <div class="topics-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <h3 class="topics-card__title">Design</h3>
+        <p class="topics-card__desc">Typography, colour, layout, and theory</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SECTION 4: EDITOR'S NOTE
+════════════════════════════════════════ -->
+<section class="section section--mid" aria-label="Editor's note">
+  <div class="container container--narrow">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:clamp(2rem,4vw,3.5rem);position:relative;overflow:hidden">
+      <div style="position:absolute;top:-60px;right:-60px;width:160px;height:160px;border-radius:50%;background:var(--grad-copper);opacity:0.06;pointer-events:none"></div>
+      <div style="display:flex;gap:var(--space-2);align-items:center;margin-bottom:var(--space-5)">
+        <span style="width:3px;height:24px;background:var(--copper);border-radius:var(--radius-full);display:inline-block"></span>
+        <span class="section-label" style="margin:0">From the Editor</span>
+      </div>
+      <blockquote style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:var(--weight-bold);line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-primary);margin-bottom:var(--space-5)">
+        "Every print project is a conversation between the designer's intent and the material's soul. We're here to help you speak that language fluently."
+      </blockquote>
+      <div style="display:flex;align-items:center;gap:var(--space-4)">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--grad-copper);display:flex;align-items:center;justify-content:center;font-weight:var(--weight-black);color:var(--obsidian);font-size:1rem">PC</div>
+        <div>
+          <div style="font-weight:var(--weight-semibold);font-size:var(--text-sm)">PrintCraft Editorial Team</div>
+          <div style="font-size:var(--text-xs);color:var(--text-muted)">Curating insights since 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js" type="module"></script>
+<script>
+  document.addEventListener('componentsLoaded', () => {
+    const filters = document.querySelectorAll('.blog-filter');
+    const cards = document.querySelectorAll('.blog-card');
+    const pages = document.querySelectorAll('.pag-page');
+    const prevBtn = document.querySelector('.pag-prev');
+    const nextBtn = document.querySelector('.pag-next');
+    const showingEl = document.querySelector('[style*="Showing"]');
+    const PER_PAGE = 3;
+    let currentPage = 1;
+    let filteredCards = [...cards];
+
+    function updateFiltered() {
+      const activeFilter = document.querySelector('.blog-filter.active');
+      const filter = activeFilter ? activeFilter.dataset.filter : 'all';
+      filteredCards = [...cards].filter(card =>
+        filter === 'all' || card.dataset.category === filter
+      );
+    }
+
+    function renderPage(page) {
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / PER_PAGE));
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+
+      const start = (page - 1) * PER_PAGE;
+      const end = start + PER_PAGE;
+
+      cards.forEach((card, i) => {
+        const isVisible = filteredCards.includes(card);
+        const inRange = i >= start && i < end;
+        if (isVisible && inRange) {
+          card.style.display = '';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+
+      pages.forEach(p => {
+        const pNum = parseInt(p.dataset.page);
+        p.className = `btn btn--sm ${pNum === page ? 'btn--primary' : 'btn--ghost'} pag-page`;
+        p.disabled = pNum > totalPages;
+        p.style.display = pNum <= totalPages ? '' : 'none';
+      });
+
+      prevBtn.disabled = page <= 1;
+      nextBtn.disabled = page >= totalPages;
+
+      if (showingEl) {
+        const shown = Math.min(end, filteredCards.length);
+        showingEl.textContent = `Showing ${shown} of ${filteredCards.length} articles`;
+      }
+    }
+
+    function initPagination() {
+      updateFiltered();
+      renderPage(1);
+    }
+
+    pages.forEach(btn => {
+      btn.addEventListener('click', () => renderPage(parseInt(btn.dataset.page)));
+    });
+    prevBtn.addEventListener('click', () => renderPage(currentPage - 1));
+    nextBtn.addEventListener('click', () => renderPage(currentPage + 1));
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        initPagination();
+      });
+    });
+
+    // Topic cards navigate to filter
+    document.querySelectorAll('[data-filter]').forEach(el => {
+      el.addEventListener('click', () => {
+        const filter = el.dataset.filter;
+        filters.forEach(b => {
+          b.classList.toggle('active', b.dataset.filter === filter);
+        });
+        initPagination();
+        document.querySelector('.section--mid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Newsletter form
+    document.getElementById('newsletterForm')?.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      if (input?.value.trim()) {
+        const btn = e.target.querySelector('button');
+        btn.textContent = '✓ Subscribed!';
+        btn.disabled = true;
+        input.value = '';
+        setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000);
+      }
+    });
+
+    initPagination();
+  });
+</script>
+</body>
+</html>

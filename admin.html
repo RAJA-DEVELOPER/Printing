@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — PrintCraft Studio</title>
+  <meta name="description" content="Admin dashboard for managing PrintCraft Studio — users, orders, products, and analytics." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body style="overflow:auto">
+
+<div class="dashboard-layout">
+
+  <!-- ══════ SIDEBAR ══════ -->
+  <aside class="dash-sidebar" id="dashSidebar" role="navigation" aria-label="Admin navigation">
+    <div class="dash-sidebar__header">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">P</div>
+        <span class="navbar__logo-text">Print<span>Craft</span></span>
+      </a>
+    </div>
+
+    <nav class="dash-sidebar__nav">
+      <div class="dash-nav-label">Main</div>
+      <a href="#" class="dash-nav-item active" data-section="overview">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3Z"/><path d="M10 13h4v8h-4Z"/><path d="M17 9h4v12h-4Z"/></svg></span>
+        <span class="dash-nav-label-text">Dashboard</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="analytics">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></span>
+        <span class="dash-nav-label-text">Analytics</span>
+      </a>
+
+      <div class="dash-nav-label">Management</div>
+      <a href="#" class="dash-nav-item" data-section="users">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="dash-nav-label-text">Users</span>
+        <span class="notif-badge dash-nav-badge">847</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="orders">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+        <span class="dash-nav-label-text">Orders</span>
+        <span class="notif-badge dash-nav-badge">12</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="products">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+        <span class="dash-nav-label-text">Products</span>
+        <span class="notif-badge dash-nav-badge">8</span>
+      </a>
+
+      <div class="dash-nav-label">Content</div>
+      <a href="#" class="dash-nav-item" data-section="testimonials">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span>
+        <span class="dash-nav-label-text">Testimonials</span>
+      </a>
+      <a href="#" class="dash-nav-item" data-section="inquiries">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2v7h-7"/><path d="M15 22H5a2 2 0 0 1-2-2V7"/></svg></span>
+        <span class="dash-nav-label-text">Inquiries</span>
+      </a>
+
+      <div class="dash-nav-label" style="margin-top:var(--space-4)">System</div>
+      <a href="#" class="dash-nav-item" data-section="settings">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></span>
+        <span class="dash-nav-label-text">Settings</span>
+      </a>
+
+      <div class="dash-nav-label"></div>
+      <a href="index.html" class="dash-nav-item" style="color:var(--copper)">
+        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
+        <span>Back to Website</span>
+      </a>
+    </nav>
+
+    <div class="dash-sidebar__footer">
+      <div class="dash-user">
+        <div class="dash-avatar">A</div>
+        <div>
+          <div class="dash-user__name">Admin</div>
+          <div class="dash-user__plan">Super Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════ MAIN CONTENT ══════ -->
+  <main class="dash-main" id="dashMain">
+
+    <!-- Topbar -->
+    <div class="dash-topbar">
+      <div>
+        <h1 style="font-size:var(--text-lg);font-weight:700" id="dashPageTitle">Admin Dashboard</h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:var(--space-4)">
+        <div class="dash-search">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+          <input type="text" placeholder="Search users, orders, products..." id="dashSearch" />
+        </div>
+        <button class="btn-icon" aria-label="Notifications"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- ══════════════ OVERVIEW ══════════════ -->
+      <section class="dash-section active" id="section-overview">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Welcome back, Admin</h2>
+
+        <div class="dash-overview-grid">
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <span class="dash-stat-change">+12</span>
+            </div>
+            <div class="dash-stat-value" data-count="847">0</div>
+            <div class="dash-stat-label">Total Users</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <span class="dash-stat-change">+18</span>
+            </div>
+            <div class="dash-stat-value" data-count="2846">0</div>
+            <div class="dash-stat-label">Orders Processed</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 7h20"/><rect x="2" y="7" width="20" height="10" rx="2"/></svg></div>
+              <span class="dash-stat-change">+$12.4k</span>
+            </div>
+            <div class="dash-stat-value" data-prefix="$" data-count="284500">0</div>
+            <div class="dash-stat-label">Total Revenue</div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-card__head">
+              <div class="dash-stat-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <span class="dash-stat-change">+2</span>
+            </div>
+            <div class="dash-stat-value" data-count="8">0</div>
+            <div class="dash-stat-label">Products</div>
+          </div>
+        </div>
+
+        <!-- Chart Placeholder -->
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-6)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+            <h3 style="font-size:var(--text-md);font-weight:700">Revenue Overview</h3>
+            <select class="form-control" style="width:auto" aria-label="Time range">
+              <option>Last 7 Days</option>
+              <option selected>Last 30 Days</option>
+              <option>Last 90 Days</option>
+              <option>This Year</option>
+            </select>
+          </div>
+          <div class="chart-container" style="height:260px;display:flex;align-items:flex-end;gap:6px;padding:var(--space-4) 0">
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="65" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Mon</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="45" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Tue</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="80" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Wed</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="55" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Thu</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="90" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Fri</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="70" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Sat</span></div>
+            <div class="chart-col" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><div class="chart-bar" data-height="60" style="height:0%"></div><span style="font-size:var(--text-xs);color:var(--text-muted)">Sun</span></div>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <h3 style="font-size:var(--text-md);font-weight:700">Recent Orders</h3>
+            <a href="#" class="dash-nav-item" data-section="orders" style="font-size:var(--text-xs);color:var(--copper)">View All →</a>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th>Order ID</th><th>Customer</th><th>Product</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8821</td><td>Jane Doe</td><td>Gold Foil Visiting Cards</td><td>Jul 14, 2026</td><td>$148</td><td><span class="order-status order-status--processing">Processing</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8820</td><td>John Smith</td><td>Soft Touch Matte Cards</td><td>Jul 14, 2026</td><td>$68</td><td><span class="order-status order-status--pending">Pending Proof</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8819</td><td>Priya Sharma</td><td>Pull-Up Banner Set</td><td>Jul 13, 2026</td><td>$640</td><td><span class="order-status order-status--processing">Printing</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8818</td><td>Kai Nakamura</td><td>Branded Mugs (24pk)</td><td>Jul 13, 2026</td><td>$192</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="color:var(--copper);font-weight:600">#PC-8817</td><td>Elena Rossi</td><td>Corporate Brochure A4</td><td>Jul 12, 2026</td><td>$95</td><td><span class="order-status order-status--complete">Complete</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ ANALYTICS ══════════════ -->
+      <section class="dash-section" id="section-analytics">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Analytics</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-4);margin-bottom:var(--space-6)">
+          <div class="ad-stat-card">
+            <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Conversion Rate</div>
+            <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--neon);margin-top:var(--space-2)">3.8%</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-1)">+0.6% vs last month</div>
+          </div>
+          <div class="ad-stat-card">
+            <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Avg. Order Value</div>
+            <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--copper);margin-top:var(--space-2)">$127</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-1)">+$12 vs last month</div>
+          </div>
+          <div class="ad-stat-card">
+            <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Repeat Rate</div>
+            <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--copper);margin-top:var(--space-2)">64%</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-1)">+3% vs last month</div>
+          </div>
+          <div class="ad-stat-card">
+            <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Active Clients</div>
+            <div style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:800;color:var(--copper);margin-top:var(--space-2)">312</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-1)">Ordered in last 30 days</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h3 style="font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-5)">Top Products</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span style="font-size:var(--text-sm);font-weight:600">Visiting Cards</span><span style="font-size:var(--text-sm);color:var(--copper)">$48.2k</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span style="font-size:var(--text-sm);font-weight:600">Brochures</span><span style="font-size:var(--text-sm);color:var(--copper)">$36.1k</span></div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span style="font-size:var(--text-sm);font-weight:600">Banners</span><span style="font-size:var(--text-sm);color:var(--copper)">$28.4k</span></div><div class="progress-bar"><div class="progress-fill" style="width:59%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span style="font-size:var(--text-sm);font-weight:600">Packaging</span><span style="font-size:var(--text-sm);color:var(--copper)">$22.8k</span></div><div class="progress-bar"><div class="progress-fill" style="width:47%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span style="font-size:var(--text-sm);font-weight:600">Merchandise</span><span style="font-size:var(--text-sm);color:var(--copper)">$18.3k</span></div><div class="progress-bar"><div class="progress-fill" style="width:38%"></div></div></div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h3 style="font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-5)">Recent Activity</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--neon);margin-top:6px;flex-shrink:0"></div>
+                <div>
+                  <div style="font-size:var(--text-sm);font-weight:600">New order placed</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">Priya Sharma ordered Pull-Up Banner Set — $640</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">2 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--copper);margin-top:6px;flex-shrink:0"></div>
+                <div>
+                  <div style="font-size:var(--text-sm);font-weight:600">Payment received</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">#PC-8810 — payment of $95 confirmed</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">4 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--neon);margin-top:6px;flex-shrink:0"></div>
+                <div>
+                  <div style="font-size:var(--text-sm);font-weight:600">Artwork uploaded</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">Jane Doe uploaded files for #PC-8821</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">6 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--neon);margin-top:6px;flex-shrink:0"></div>
+                <div>
+                  <div style="font-size:var(--text-sm);font-weight:600">New user registered</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">+3 new premium account signups today</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">12 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--copper);margin-top:6px;flex-shrink:0"></div>
+                <div>
+                  <div style="font-size:var(--text-sm);font-weight:600">Order completed</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">#PC-8798 marked as delivered</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:2px">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ USERS ══════════════ -->
+      <section class="dash-section" id="section-users">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">Manage Users</h2>
+          <div style="display:flex;gap:var(--space-3)">
+            <select class="form-control" style="width:auto" aria-label="Filter users">
+              <option>All Users</option>
+              <option>Premium</option>
+              <option>Standard</option>
+              <option>Admin</option>
+            </select>
+            <button class="btn btn--primary btn--sm">+ Add User</button>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Role</th><th>Orders</th><th>Spent</th><th>Status</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">JD</div> Jane Doe</div></td><td>jane@luminary.com</td><td>Premium</td><td>12</td><td>$4,280</td><td><span class="order-status order-status--complete">Active</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">PS</div> Priya Sharma</div></td><td>priya@designlab.in</td><td>Premium</td><td>8</td><td>$3,150</td><td><span class="order-status order-status--complete">Active</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">KN</div> Kai Nakamura</div></td><td>kai@tokyoprint.jp</td><td>Premium</td><td>6</td><td>$2,890</td><td><span class="order-status order-status--complete">Active</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">ER</div> Elena Rossi</div></td><td>elena@studio-rossi.it</td><td>Premium</td><td>5</td><td>$1,740</td><td><span class="order-status order-status--complete">Active</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">AM</div> Alex M.</div></td><td>alex@webprint.co</td><td>Standard</td><td>3</td><td>$420</td><td><span class="order-status order-status--complete">Active</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+                <tr><td style="font-weight:600"><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="dash-avatar" style="width:32px;height:32px;font-size:0.7rem">SC</div> Sarah C.</div></td><td>sarah@creative.agency</td><td>Premium</td><td>2</td><td>$680</td><td><span class="order-status order-status--pending">Inactive</span></td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ ORDERS ══════════════ -->
+      <section class="dash-section" id="section-orders">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">All Orders</h2>
+          <div style="display:flex;gap:var(--space-3)">
+            <select class="form-control" style="width:auto" aria-label="Filter orders">
+              <option>All Orders</option>
+              <option>Pending</option>
+              <option>Processing</option>
+              <option>Printing</option>
+              <option>Complete</option>
+              <option>Cancelled</option>
+            </select>
+            <select class="form-control" style="width:auto" aria-label="Sort by">
+              <option>Newest First</option>
+              <option>Oldest First</option>
+              <option>Highest Value</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th><input type="checkbox" style="accent-color:var(--copper)" /></th><th>Order ID</th><th>Customer</th><th>Product</th><th>Date</th><th>Qty</th><th>Amount</th><th>Status</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8821</td><td>Jane Doe</td><td>Gold Foil Visiting Cards</td><td>Jul 14</td><td>500</td><td>$148</td><td><span class="order-status order-status--processing">Processing</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Edit</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8820</td><td>John Smith</td><td>Soft Touch Matte Cards</td><td>Jul 14</td><td>250</td><td>$68</td><td><span class="order-status order-status--pending">Pending</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Edit</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8819</td><td>Priya Sharma</td><td>Pull-Up Banner Set</td><td>Jul 13</td><td>4</td><td>$640</td><td><span class="order-status order-status--processing">Printing</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Edit</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8818</td><td>Kai Nakamura</td><td>Branded Mugs (24pk)</td><td>Jul 13</td><td>24</td><td>$192</td><td><span class="order-status order-status--complete">Complete</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Invoice</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8817</td><td>Elena Rossi</td><td>Corporate Brochure A4</td><td>Jul 12</td><td>200</td><td>$95</td><td><span class="order-status order-status--complete">Complete</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Invoice</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8815</td><td>Alex M.</td><td>DL Flyers (Gloss)</td><td>Jul 12</td><td>1000</td><td>$112</td><td><span class="order-status order-status--processing">Printing</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Edit</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8810</td><td>Jane Doe</td><td>A4 Tri-fold Brochures</td><td>Jul 10</td><td>200</td><td>$95</td><td><span class="order-status order-status--complete">Complete</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Invoice</button></div></td></tr>
+                <tr><td><input type="checkbox" style="accent-color:var(--copper)" /></td><td style="color:var(--copper);font-weight:600">#PC-8798</td><td>Priya Sharma</td><td>Pull-Up Banner 85×200</td><td>Jul 5</td><td>2</td><td>$320</td><td><span class="order-status order-status--complete">Complete</span></td><td><div style="display:flex;gap:4px"><button class="btn btn--ghost btn--sm">View</button><button class="btn btn--ghost btn--sm">Invoice</button></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-5)">
+          <div style="font-size:var(--text-sm);color:var(--text-muted)">Showing 1-8 of 2,846 orders</div>
+          <div style="display:flex;gap:var(--space-2)">
+            <button class="btn btn--ghost btn--sm" disabled>← Previous</button>
+            <button class="btn btn--primary btn--sm">1</button>
+            <button class="btn btn--ghost btn--sm">2</button>
+            <button class="btn btn--ghost btn--sm">3</button>
+            <button class="btn btn--ghost btn--sm">Next →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ PRODUCTS ══════════════ -->
+      <section class="dash-section" id="section-products">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">Manage Products</h2>
+          <button class="btn btn--primary btn--sm">+ Add Product</button>
+        </div>
+
+        <div class="products-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">Visiting Cards</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $25 — 50+ variations</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">Flyers & Brochures</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $40 — A5, A4, DL</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">Banners & Signage</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $150 — Custom sizes</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">Packaging</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $200 — Custom design</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">T-Shirts & Merch</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $12/pc — DTG, Embroidery</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
+            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/press.png');background-size:cover;background-position:center;"></div>
+            <div style="padding:var(--space-4)">
+              <div style="font-weight:700;margin-bottom:4px">Press & Media Kits</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $300 — Full set</div>
+              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ TESTIMONIALS ══════════════ -->
+      <section class="dash-section" id="section-testimonials">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">Testimonials</h2>
+          <button class="btn btn--primary btn--sm">+ Add Testimonial</button>
+        </div>
+
+        <div style="display:grid;gap:var(--space-4)">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-5);display:flex;gap:var(--space-4);align-items:flex-start">
+            <div class="dash-avatar" style="width:44px;height:44px;font-size:0.85rem;flex-shrink:0">PS</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2)">
+                <div><span style="font-weight:600;font-size:var(--text-sm)">Priya Sharma</span> <span style="font-size:var(--text-xs);color:var(--text-muted)">— DesignLab India</span></div>
+                <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm" style="color:#FF453A">Delete</button></div>
+              </div>
+              <div style="display:flex;gap:2px;color:var(--copper);margin-bottom:var(--space-2);font-size:0.8rem">★★★★★</div>
+              <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed)">"PrintCraft transformed our brand identity. The gold foil finish on our business cards has been a conversation starter at every meeting."</p>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-5);display:flex;gap:var(--space-4);align-items:flex-start">
+            <div class="dash-avatar" style="width:44px;height:44px;font-size:0.85rem;flex-shrink:0">KN</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2)">
+                <div><span style="font-weight:600;font-size:var(--text-sm)">Kai Nakamura</span> <span style="font-size:var(--text-xs);color:var(--text-muted)">— Tokyo Print Co.</span></div>
+                <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm" style="color:#FF453A">Delete</button></div>
+              </div>
+              <div style="display:flex;gap:2px;color:var(--copper);margin-bottom:var(--space-2);font-size:0.8rem">★★★★★</div>
+              <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed)">"The precision and attention to detail is unmatched. Our packaging project exceeded every expectation we had."</p>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-5);display:flex;gap:var(--space-4);align-items:flex-start">
+            <div class="dash-avatar" style="width:44px;height:44px;font-size:0.85rem;flex-shrink:0">ER</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2)">
+                <div><span style="font-weight:600;font-size:var(--text-sm)">Elena Rossi</span> <span style="font-size:var(--text-xs);color:var(--text-muted)">— Studio Rossi Milano</span></div>
+                <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm" style="color:#FF453A">Delete</button></div>
+              </div>
+              <div style="display:flex;gap:2px;color:var(--copper);margin-bottom:var(--space-2);font-size:0.8rem">★★★★★</div>
+              <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed)">"We've worked with dozens of print houses across Europe. PrintCraft's quality and turnaround is genuinely world-class."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ INQUIRIES ══════════════ -->
+      <section class="dash-section" id="section-inquiries">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <h2 style="font-size:var(--text-xl);font-weight:700">Contact Inquiries</h2>
+          <select class="form-control" style="width:auto" aria-label="Filter inquiries">
+            <option>All</option>
+            <option>Unread</option>
+            <option>Read</option>
+            <option>Replied</option>
+          </select>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="overflow-x:auto">
+            <table class="orders-table">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr><td style="font-weight:600">Michael Chen</td><td>michael@startup.io</td><td>Bulk order inquiry — 5000 cards</td><td>Jul 15</td><td><span class="order-status order-status--pending">New</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="font-weight:600">Sarah Mills</td><td>sarah@agency.co</td><td>Rush printing availability</td><td>Jul 14</td><td><span class="order-status order-status--complete">Replied</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="font-weight:600">Omar Hassan</td><td>omar@brandme.com</td><td>Complete corporate identity quote</td><td>Jul 14</td><td><span class="order-status order-status--complete">Read</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="font-weight:600">Lisa Park</td><td>lisa@studio-park.kr</td><td>International shipping question</td><td>Jul 13</td><td><span class="order-status order-status--pending">New</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+                <tr><td style="font-weight:600">James Wilson</td><td>james@printshop.com</td><td>Partnership proposal</td><td>Jul 13</td><td><span class="order-status order-status--complete">Replied</span></td><td><button class="btn btn--ghost btn--sm">View</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════ SETTINGS ══════════════ -->
+      <section class="dash-section" id="section-settings">
+        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">System Settings</h2>
+
+        <div style="display:grid;gap:var(--space-5);max-width:720px">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h3 style="font-weight:700;margin-bottom:var(--space-5)">General Settings</h3>
+            <form style="display:flex;flex-direction:column;gap:var(--space-5)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div class="form-group"><label class="form-label">Site Name</label><input class="form-control" type="text" value="PrintCraft Studio" /></div>
+                <div class="form-group"><label class="form-label">Support Email</label><input class="form-control" type="email" value="hello@printcraft.studio" /></div>
+              </div>
+              <div class="form-group"><label class="form-label">Tagline</label><input class="form-control" type="text" value="Elevating brands through exceptional print craft." /></div>
+              <div class="form-group"><label class="form-label">Default Currency</label>
+                <select class="form-control">
+                  <option>USD ($)</option>
+                  <option>AED (د.إ)</option>
+                  <option>EUR (€)</option>
+                  <option>GBP (£)</option>
+                </select>
+              </div>
+              <div><button type="button" class="btn btn--primary">Save Settings</button></div>
+            </form>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h3 style="font-weight:700;margin-bottom:var(--space-4)">Order Defaults</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Auto-approve proofs for premium clients</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">SMS notifications for order updates</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Send invoice PDF on order completion</span></label>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h3 style="font-weight:700;margin-bottom:var(--space-4)">Security</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <button class="btn btn--outline" onclick="alert('Password reset email sent!')">Change Admin Password</button>
+              <button class="btn btn--outline" onclick="alert('2FA setup coming soon!')">Enable Two-Factor Auth</button>
+              <a href="login.html" class="btn btn--ghost" style="color:#FF453A;border-color:rgba(255,69,58,0.3)">Sign Out</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const remove = s => document.querySelector(s)?.remove();
+    remove('.navbar');
+    remove('.footer');
+
+    const btt = document.createElement('button');
+    btt.className = 'back-to-top';
+    btt.id = 'backToTop';
+    btt.setAttribute('aria-label','Back to top');
+    btt.textContent = '↑';
+    document.body.appendChild(btt);
+
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400), {passive:true});
+    btt.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const duration = 1500;
+      const start = performance.now();
+      function update(time) {
+        const progress = Math.min((time - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = target * eased;
+        el.textContent = prefix + (Number.isInteger(target) ? Math.floor(current).toLocaleString() : current.toFixed(1)) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    document.querySelectorAll('[data-count]').forEach(el => animateCounter(el));
+
+    // Chart bar animation
+    function animateChartBars() {
+      const container = document.querySelector('.chart-container');
+      if (!container) return;
+      const bars = container.querySelectorAll('.chart-bar');
+      const colHeight = container.clientHeight - 24; // account for bottom padding
+
+      bars.forEach(bar => {
+        const target = parseInt(bar.dataset.height);
+        if (!target) return;
+        const targetHeight = (target / 100) * colHeight;
+
+        let current = 0;
+        const duration = 800;
+        const startTime = performance.now();
+
+        function step(time) {
+          const progress = Math.min((time - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          current = targetHeight * eased;
+          bar.style.height = current + 'px';
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    // Observe chart container for visibility
+    const chartContainer = document.querySelector('.chart-container');
+    if (chartContainer) {
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateChartBars();
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        obs.observe(chartContainer);
+      } else {
+        animateChartBars();
+      }
+    }
+
+    // Re-animate on time range change
+    document.querySelector('.chart-container')?.closest('[style*="background"]')?.querySelector('select')?.addEventListener('change', () => {
+      const bars = document.querySelectorAll('.chart-bar');
+      bars.forEach(bar => bar.style.height = '0px');
+      setTimeout(animateChartBars, 100);
+    });
+
+    // Admin navigation
+    const navItems = document.querySelectorAll('.dash-nav-item[data-section]');
+    const sections = document.querySelectorAll('.dash-section');
+    const titles = {
+      overview: 'Admin Dashboard', analytics: 'Analytics',
+      users: 'Manage Users', orders: 'All Orders',
+      products: 'Manage Products', testimonials: 'Testimonials',
+      inquiries: 'Contact Inquiries', settings: 'System Settings'
+    };
+
+    function setSection(name) {
+      navItems.forEach(n => n.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      const target = document.getElementById('section-' + name);
+      if (target) target.classList.add('active');
+      const navItem = document.querySelector(`.dash-nav-item[data-section="${name}"]`);
+      if (navItem) navItem.classList.add('active');
+      document.getElementById('dashPageTitle').textContent = titles[name] || 'Admin';
+    }
+
+    window.setSection = setSection;
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        setSection(item.dataset.section);
+      });
+    });
+  });
+</script>
+</body>
+</html>
