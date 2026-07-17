@@ -53,11 +53,6 @@
         <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
         <span class="dash-nav-label-text">Orders</span>
       </a>
-      <a href="#" class="dash-nav-item" data-section="products">
-        <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-        <span class="dash-nav-label-text">Products</span>
-      </a>
-
       <div class="dash-nav-label">Content</div>
       <a href="#" class="dash-nav-item" data-section="testimonials">
         <span class="dash-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span>
@@ -105,7 +100,7 @@
           <span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
           <input type="text" placeholder="Search users, orders, products..." id="dashSearch" />
         </div>
-        <button class="btn-icon" aria-label="Notifications"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+        <button class="btn-icon" aria-label="Notifications"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="var(--copper-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
       </div>
     </div>
 
@@ -197,8 +192,6 @@
 
       <!-- ══════════════ ANALYTICS ══════════════ -->
       <section class="dash-section" id="section-analytics">
-        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">Analytics</h2>
-
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-4);margin-bottom:var(--space-6)">
           <div class="ad-stat-card">
             <div style="font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em">Conversion Rate</div>
@@ -284,8 +277,7 @@
 
       <!-- ══════════════ USERS ══════════════ -->
       <section class="dash-section" id="section-users">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <h2 style="font-size:var(--text-xl);font-weight:700">Manage Users</h2>
+        <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:var(--space-6)">
           <div style="display:flex;gap:var(--space-3)">
             <select class="form-control" style="width:auto" aria-label="Filter users">
               <option>All Users</option>
@@ -318,8 +310,7 @@
 
       <!-- ══════════════ ORDERS ══════════════ -->
       <section class="dash-section" id="section-orders">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <h2 style="font-size:var(--text-xl);font-weight:700">All Orders</h2>
+        <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:var(--space-6)">
           <div style="display:flex;gap:var(--space-3)">
             <select class="form-control" style="width:auto" aria-label="Filter orders">
               <option>All Orders</option>
@@ -369,69 +360,11 @@
         </div>
       </section>
 
-      <!-- ══════════════ PRODUCTS ══════════════ -->
-      <section class="dash-section" id="section-products">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <h2 style="font-size:var(--text-xl);font-weight:700">Manage Products</h2>
-          <button class="btn btn--primary btn--sm">+ Add Product</button>
-        </div>
 
-        <div class="products-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/visiting_cards.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">Visiting Cards</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $25 — 50+ variations</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/brochure.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">Flyers & Brochures</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $40 — A5, A4, DL</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/brand_identity.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">Banners & Signage</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $150 — Custom sizes</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/packaging.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">Packaging</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $200 — Custom design</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/tshirt.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">T-Shirts & Merch</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $12/pc — DTG, Embroidery</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-          <div class="product-card reveal" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--bg-card)">
-            <div class="product-card__img" style="width:100%;height:180px;background-image:url('assets/images/press.png');background-size:cover;background-position:center;"></div>
-            <div style="padding:var(--space-4)">
-              <div style="font-weight:700;margin-bottom:4px">Press & Media Kits</div>
-              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">From $300 — Full set</div>
-              <div style="display:flex;gap:var(--space-2)"><button class="btn btn--ghost btn--sm">Edit</button><button class="btn btn--ghost btn--sm">Hide</button></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ══════════════ TESTIMONIALS ══════════════ -->
       <section class="dash-section" id="section-testimonials">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <h2 style="font-size:var(--text-xl);font-weight:700">Testimonials</h2>
+        <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:var(--space-6)">
           <button class="btn btn--primary btn--sm">+ Add Testimonial</button>
         </div>
 
@@ -476,8 +409,7 @@
 
       <!-- ══════════════ INQUIRIES ══════════════ -->
       <section class="dash-section" id="section-inquiries">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-          <h2 style="font-size:var(--text-xl);font-weight:700">Contact Inquiries</h2>
+        <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:var(--space-6)">
           <select class="form-control" style="width:auto" aria-label="Filter inquiries">
             <option>All</option>
             <option>Unread</option>
@@ -506,11 +438,11 @@
 
       <!-- ══════════════ SETTINGS ══════════════ -->
       <section class="dash-section" id="section-settings">
-        <h2 style="font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-6)">System Settings</h2>
-
-        <div style="display:grid;gap:var(--space-5);max-width:720px">
-          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
-            <h3 style="font-weight:700;margin-bottom:var(--space-5)">General Settings</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);align-items:start">
+          <!-- Left Column -->
+          <div style="display:grid;gap:var(--space-5)">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-5)">General Settings</h3>
             <form style="display:flex;flex-direction:column;gap:var(--space-5)">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
                 <div class="form-group"><label class="form-label">Site Name</label><input class="form-control" type="text" value="PrintCraft Studio" /></div>
@@ -530,7 +462,47 @@
           </div>
 
           <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
-            <h3 style="font-weight:700;margin-bottom:var(--space-4)">Order Defaults</h3>
+              <h3 style="font-weight:700;margin-bottom:var(--space-4)">Branding</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div class="form-group"><label class="form-label">Brand Color</label><div style="display:flex;gap:var(--space-3);align-items:center"><input type="color" value="#C5966B" style="width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;background:none" /><span style="font-size:var(--text-sm);color:var(--text-muted)">#C5966B</span></div></div>
+              <div class="form-group"><label class="form-label">Logo</label><div style="display:flex;gap:var(--space-3);align-items:center"><button class="btn btn--outline btn--sm">Upload Logo</button><span style="font-size:var(--text-xs);color:var(--text-muted)">SVG, PNG • Max 2MB</span></div></div>
+              <div class="form-group"><label class="form-label">Footer Text</label><input class="form-control" type="text" value="© 2026 PrintCraft Studio. All rights reserved." /></div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-4)">Localization</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div class="form-group"><label class="form-label">Timezone</label>
+                <select class="form-control">
+                  <option>UTC (Coordinated Universal Time)</option>
+                  <option selected>America/New_York (EST)</option>
+                  <option>Asia/Dubai (GST)</option>
+                  <option>Europe/London (GMT)</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label">Date Format</label>
+                <select class="form-control">
+                  <option>MM/DD/YYYY</option>
+                  <option selected>DD/MM/YYYY</option>
+                  <option>YYYY-MM-DD</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label">Language</label>
+                <select class="form-control">
+                  <option>English</option>
+                  <option>Arabic</option>
+                  <option>French</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Right Column -->
+          <div style="display:grid;gap:var(--space-5)">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-4)">Order Defaults</h3>
             <div style="display:flex;flex-direction:column;gap:var(--space-3)">
               <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Auto-approve proofs for premium clients</span></label>
               <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">SMS notifications for order updates</span></label>
@@ -538,7 +510,7 @@
             </div>
           </div>
 
-          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);align-self:start">
             <h3 style="font-weight:700;margin-bottom:var(--space-4)">Security</h3>
             <div style="display:flex;flex-direction:column;gap:var(--space-3)">
               <button class="btn btn--outline" onclick="alert('Password reset email sent!')">Change Admin Password</button>
@@ -546,7 +518,18 @@
               <a href="login.html" class="btn btn--ghost" style="color:#FF453A;border-color:rgba(255,69,58,0.3)">Sign Out</a>
             </div>
           </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6)">
+              <h3 style="font-weight:700;margin-bottom:var(--space-4)">Notification Preferences</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">New order alerts</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Low stock warnings</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">Weekly analytics summary</span></label>
+              <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--copper);width:16px;height:16px" /> <span style="font-size:var(--text-sm)">System update notifications</span></label>
+            </div>
+          </div>
         </div>
+      </div>
       </section>
 
     </div>
@@ -650,7 +633,7 @@
     const titles = {
       overview: 'Admin Dashboard', analytics: 'Analytics',
       users: 'Manage Users', orders: 'All Orders',
-      products: 'Manage Products', testimonials: 'Testimonials',
+      testimonials: 'Testimonials',
       inquiries: 'Contact Inquiries', settings: 'System Settings'
     };
 

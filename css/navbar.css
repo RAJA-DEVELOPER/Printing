@@ -385,6 +385,12 @@
   margin-bottom: var(--space-3);
 }
 
+.footer__contact-item span:last-child {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
 .footer__contact-icon {
   color: var(--copper);
   flex-shrink: 0;

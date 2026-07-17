@@ -451,10 +451,10 @@
 .stats-grid .stat-item {
   text-align: center;
   padding: var(--space-8);
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
-.stats-grid .stat-item:last-child { border-right: none; }
+.stats-grid .stat-item:first-child { border-left: none; }
 
 /* ── 6. TESTIMONIALS ── */
 .testimonials {
@@ -654,7 +654,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stats-grid .stat-item { border-left: none; border-bottom: 1px solid var(--border); }
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .process-steps::before { display: none; }

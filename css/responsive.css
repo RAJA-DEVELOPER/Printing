@@ -503,16 +503,16 @@
    ════════════════════════════════════════ */
 @media (max-width: 639px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
   }
-  .product-card {
-    height: 200px;
+  .product-card__body {
+    padding: var(--space-4);
   }
-}
-
-@media (max-width: 359px) {
-  .products-grid {
-    grid-template-columns: 1fr;
+  .product-card__desc {
+    display: none;
+  }
+  .product-card__footer {
+    padding-top: var(--space-3);
   }
 }
 
@@ -631,7 +631,7 @@
   .timeline-marker {
     position: absolute;
     left: -13px;
-    top: var(--space-6);
+    top: var(--space-8);
     width: 24px;
     height: 24px;
   }
@@ -1882,7 +1882,37 @@
 }
 
 /* ----------------------------------------
-   GALLERY � EXTRA SMALL (=360px)
+   SERVICES — EXTRA EXTRA SMALL (=320px)
+   ---------------------------------------- */
+@media (max-width: 320px) {
+  .service-detail__visual {
+    min-height: 160px !important;
+  }
+
+  .logos-grid {
+    grid-template-columns: 1fr !important;
+    padding: var(--space-4) !important;
+    gap: var(--space-3) !important;
+  }
+  .logo-item {
+    padding: var(--space-2) !important;
+  }
+  .logo-text {
+    font-size: var(--text-sm) !important;
+  }
+
+  .social-section a.card {
+    padding: var(--space-3) var(--space-2) !important;
+    min-width: 60px !important;
+  }
+  .social-section .social-icon-wrap {
+    font-size: 1rem !important;
+    margin-bottom: var(--space-1) !important;
+  }
+}
+
+/* ----------------------------------------
+   GALLERY — EXTRA SMALL (=360px)
    ---------------------------------------- */
 @media (max-width: 360px) {
   /* Filter tabs */

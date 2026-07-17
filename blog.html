@@ -364,6 +364,16 @@
       }
     });
 
+    // Click card to navigate to article
+    cards.forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', e => {
+        if (e.target.closest('a, button, input, select, textarea')) return;
+        const link = card.querySelector('.blog-card__link');
+        if (link) location.href = link.getAttribute('href');
+      });
+    });
+
     initPagination();
   });
 </script>

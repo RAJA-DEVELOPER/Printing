@@ -41,6 +41,8 @@
   --text-primary: #0A0A0A;
   --text-secondary: #3A3A3C;
   --text-muted: rgba(0, 0, 0, 0.45);
+  --neon: #5C7D00;
+  --neon-dim: #4A6600;
 
   --border: rgba(0, 0, 0, 0.1);
   --border-accent: rgba(184, 115, 51, 0.35);
