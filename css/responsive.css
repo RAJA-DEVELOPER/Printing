@@ -1266,8 +1266,44 @@
 }
 
 /* ════════════════════════════════════════
-   BLOG PAGE — RESPONSIVE
-   ════════════════════════════════════════ */
+    BLOG ARTICLE — RESPONSIVE
+    ════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .blog-article__content {
+    font-size: var(--text-base);
+  }
+  .blog-article__content h2 {
+    font-size: var(--text-xl);
+  }
+  .blog-article__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .blog-article__footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .blog-article__content {
+    font-size: var(--text-sm);
+  }
+  .blog-article__content h2 {
+    font-size: var(--text-lg);
+  }
+  .blog-article__featured-img {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-lg);
+  }
+  .blog-article__content ul li {
+    padding-left: var(--space-5);
+  }
+}
+
+/* ════════════════════════════════════════
+    BLOG PAGE — RESPONSIVE
+    ════════════════════════════════════════ */
 @media (max-width: 767px) {
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);

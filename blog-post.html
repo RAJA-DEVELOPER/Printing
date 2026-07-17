@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Article — PrintCraft Studio</title>
+  <meta name="description" id="pageDesc" content="PrintCraft Studio blog article." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<section class="page-hero blog-post-hero" id="postHero" aria-label="Article hero">
+  <div class="page-hero__bg-text" aria-hidden="true" id="heroBgText">ARTICLE</div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="section-label" id="heroCategory">Article</div>
+      <h1 class="page-hero__title" id="heroTitle">Loading...</h1>
+      <p class="page-hero__subtitle" id="heroMeta"></p>
+    </div>
+  </div>
+</section>
+
+<article class="section section--mid blog-article">
+  <div class="container container--narrow">
+    <div class="blog-article__featured-img" id="featuredImg"></div>
+    <div class="blog-article__content" id="articleContent">
+      <p>Loading article...</p>
+    </div>
+    <div class="blog-article__footer">
+      <a href="blog.html" class="btn btn--ghost">&larr; Back to Blog</a>
+      <button class="btn btn--primary" onclick="window.print()">Print Article</button>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/blog-data.js"></script>
+<script>
+document.addEventListener('componentsLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'));
+  const post = blogPosts.find(p => p.id === id);
+
+  if (!post) {
+    document.title = 'Article Not Found — PrintCraft Studio';
+    document.getElementById('heroTitle').textContent = 'Article Not Found';
+    document.getElementById('heroMeta').textContent = 'The article you are looking for does not exist.';
+    document.getElementById('articleContent').innerHTML = '<p style="text-align:center;padding:var(--space-16) 0"><a href="blog.html" class="btn btn--primary">Back to Blog</a></p>';
+    return;
+  }
+
+  document.title = post.title + ' — PrintCraft Studio';
+  document.getElementById('pageDesc').content = post.excerpt;
+  document.getElementById('heroBgText').textContent = post.category.toUpperCase();
+  document.getElementById('heroCategory').textContent = post.category;
+  document.getElementById('heroTitle').textContent = post.title;
+  document.getElementById('heroMeta').textContent = post.date + ' &middot; ' + post.category;
+
+  const hero = document.getElementById('postHero');
+  hero.style.backgroundImage = "linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('" + post.image + "')";
+  hero.style.backgroundSize = 'cover';
+  hero.style.backgroundPosition = 'center';
+
+  const featured = document.getElementById('featuredImg');
+  featured.style.backgroundImage = "url('" + post.image + "')";
+
+  document.getElementById('articleContent').innerHTML = post.content;
+
+  window.scrollTo(0, 0);
+});
+</script>
+</body>
+</html>
